@@ -1,0 +1,37 @@
+name: Just Build Docker
+
+on:
+  pull_request:
+    branches: ["main"]
+
+env:
+  JWT_SECRET: "XXXXXXXXXXXXXXXXXXTEST=="
+  APP_KEYS: "XXXXXXXXXXXXXXXXXXTEST==,XXXXXXXXXXXXXXXXXXTEST==,XXXXXXXXXXXXXXXXXXTEST==,XXXXXXXXXXXXXXXXXXTEST=="
+  API_TOKEN_SALT: "XXXXXXXXXXXXXXTEST=="
+  ADMIN_JWT_SECRET: "XXXXXXXXXXXTEST=="
+  S3_BUCKET: "bucket"
+  S3_ACCESS_KEY_ID: "ACCESS_KEY_ID"
+  S3_ACCESS_SECRET: "S3_ACCESS_SECRET"
+  S3_ENDPOINT: "localhost"
+  S3_SSL: false
+  S3_PORT: 9000
+
+jobs:
+  just-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Yarn install and build
+        run: |
+          yarn install
+          yarn build
+      - name: Unit Test
+        run: |
+          yarn test
+      - name: Try Building image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: false
+          tags: ${{ secrets.APP_IMAGE }}
