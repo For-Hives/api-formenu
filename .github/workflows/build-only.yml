@@ -22,6 +22,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Use and cache Node 20.X Yarn
+        uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+          node-version: 20.x
       - name: Yarn install and build
         run: |
           yarn install
