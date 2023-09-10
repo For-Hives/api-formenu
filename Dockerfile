@@ -27,5 +27,5 @@ ENV DB_CLIENT='postgres'
 
 EXPOSE 1337
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
 
