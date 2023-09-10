@@ -34,6 +34,7 @@
     "@strapi/plugin-i18n": "4.13.3",
     "@strapi/plugin-users-permissions": "4.13.3",
     "@strapi/strapi": "4.13.3",
+    "lodash": "4.17.21",
     "minio-for-strapi-v4": "1.0.7",
     "strapi-plugin-import-export-entries": "1.21.1",
     "strapi-plugin-populate-deep": "3.0.0",
