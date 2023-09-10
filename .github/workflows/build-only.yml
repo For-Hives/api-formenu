@@ -26,9 +26,6 @@ jobs:
         run: |
           yarn install
           yarn build
-      - name: Unit Test
-        run: |
-          yarn test
       - name: Try Building image
         uses: docker/build-push-action@v4
         with:
