@@ -6,9 +6,9 @@ const mockUserData = {
   username: "tester",
   email: "tester@strapi.com",
   provider: "local",
-  password: "1234abc",
+  password: "1234abc123abc",
   confirmed: true,
-  blocked: null,
+  blocked: false
 };
 
 it("should login user and return jwt token", async () => {

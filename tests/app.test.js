@@ -15,4 +15,4 @@ it("strapi is defined", () => {
 
 require("./controllers/user");
 // todo fix this test
-// require("./controllers/my-makeup");
+

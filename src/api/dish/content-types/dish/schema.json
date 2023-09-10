@@ -186,18 +186,18 @@
     },
     "dishes": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::dish.dish",
       "pluginOptions": {
         "translate": {
           "translate": "translate"
         }
       },
-      "inversedBy": "dishes_2"
+      "mappedBy": "dishes_2"
     },
     "dishes_2": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::dish.dish",
       "pluginOptions": {
         "translate": {
@@ -221,7 +221,12 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::ingredient.ingredient",
-      "mappedBy": "dishes"
+      "mappedBy": "dishes",
+      "pluginOptions": {
+        "translate": {
+          "translate": "translate"
+        }
+      }
     }
   }
 }
