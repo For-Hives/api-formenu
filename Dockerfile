@@ -5,7 +5,6 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 
 RUN yarn install --production
-RUN yarn add pg
 
 COPY . .
 

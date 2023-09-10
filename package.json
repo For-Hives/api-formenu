@@ -36,6 +36,7 @@
     "@strapi/strapi": "4.13.6",
     "lodash": "4.17.21",
     "minio-for-strapi-v4": "1.0.7",
+    "pg": "8.11.3",
     "strapi-plugin-import-export-entries": "1.21.1",
     "strapi-plugin-populate-deep": "3.0.0",
     "strapi-plugin-translate": "1.2.2",
