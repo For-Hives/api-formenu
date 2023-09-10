@@ -9,16 +9,27 @@ const sleep = (milliseconds) => {
 };
 
 /**
- * Setups strapi for futher testing
+ * Setups strapi for further testing
  */
 async function setupStrapi() {
-  if (!instance) {
-    await Strapi().load();
-    instance = strapi;
-
-    await instance.server.mount();
+  try {
+    if (!instance) {
+      const loadedStrapi = await Strapi().load();
+      if (loadedStrapi) {
+        instance = loadedStrapi;
+        const mountResult = await instance.server.mount();
+        if (!mountResult) {
+          throw new Error("Failed to mount server");
+        }
+      } else {
+        throw new Error("Failed to load Strapi");
+      }
+    }
+    return instance;
+  } catch (error) {
+    console.error("Error setting up Strapi:", error);
+    throw error;
   }
-  return instance;
 }
 
 /**
