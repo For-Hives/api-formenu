@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-09-16T13:43:20.259Z"
+    "x-generation-date": "2023-09-16T13:44:48.932Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -145,6 +145,12 @@
               "example": "string or id"
             }
           },
+          "order": {
+            "type": "integer"
+          },
+          "depth": {
+            "type": "integer"
+          },
           "locale": {
             "type": "string"
           }
@@ -211,6 +217,12 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "order": {
+                "type": "integer"
+              },
+              "depth": {
+                "type": "integer"
               },
               "locale": {
                 "type": "string"
@@ -1871,6 +1883,12 @@
                                         }
                                       }
                                     },
+                                    "order": {
+                                      "type": "integer"
+                                    },
+                                    "depth": {
+                                      "type": "integer"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -2048,6 +2066,12 @@
                 }
               }
             }
+          },
+          "order": {
+            "type": "integer"
+          },
+          "depth": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -4129,6 +4153,12 @@
                                                                       }
                                                                     }
                                                                   }
+                                                                },
+                                                                "order": {
+                                                                  "type": "integer"
+                                                                },
+                                                                "depth": {
+                                                                  "type": "integer"
                                                                 },
                                                                 "createdAt": {
                                                                   "type": "string",
@@ -6322,6 +6352,12 @@
                                         }
                                       }
                                     },
+                                    "order": {
+                                      "type": "integer"
+                                    },
+                                    "depth": {
+                                      "type": "integer"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -8292,6 +8328,12 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "order": {
+                                      "type": "integer"
+                                    },
+                                    "depth": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -10283,6 +10325,12 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "order": {
+                                                    "type": "integer"
+                                                  },
+                                                  "depth": {
+                                                    "type": "integer"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
