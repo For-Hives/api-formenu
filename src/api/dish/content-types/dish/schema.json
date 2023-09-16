@@ -227,6 +227,14 @@
           "translate": "translate"
         }
       }
+    },
+    "order": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer"
     }
   }
 }

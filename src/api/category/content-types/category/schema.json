@@ -64,12 +64,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::dish.dish",
-      "mappedBy": "category",
       "pluginOptions": {
         "translate": {
           "translate": "translate"
         }
-      }
+      },
+      "mappedBy": "category"
     },
     "order": {
       "pluginOptions": {
