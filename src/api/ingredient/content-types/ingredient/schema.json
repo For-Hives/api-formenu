@@ -25,7 +25,8 @@
           "translate": "translate"
         }
       },
-      "type": "string"
+      "type": "string",
+      "unique": true
     },
     "dishes": {
       "type": "relation",
