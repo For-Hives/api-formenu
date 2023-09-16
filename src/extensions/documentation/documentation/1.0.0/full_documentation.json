@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-09-16T13:52:53.242Z"
+    "x-generation-date": "2023-09-16T13:53:53.572Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1846,6 +1846,10 @@
                                                   },
                                                   "order": {
                                                     "type": "integer"
+                                                  },
+                                                  "price": {
+                                                    "type": "number",
+                                                    "format": "float"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -4538,6 +4542,10 @@
                                                                               "order": {
                                                                                 "type": "integer"
                                                                               },
+                                                                              "price": {
+                                                                                "type": "number",
+                                                                                "format": "float"
+                                                                              },
                                                                               "createdAt": {
                                                                                 "type": "string",
                                                                                 "format": "date-time"
@@ -5333,6 +5341,10 @@
           "order": {
             "type": "integer"
           },
+          "price": {
+            "type": "number",
+            "format": "float"
+          },
           "locale": {
             "type": "string"
           }
@@ -5459,6 +5471,10 @@
               },
               "order": {
                 "type": "integer"
+              },
+              "price": {
+                "type": "number",
+                "format": "float"
               },
               "locale": {
                 "type": "string"
@@ -7526,6 +7542,10 @@
                         "order": {
                           "type": "integer"
                         },
+                        "price": {
+                          "type": "number",
+                          "format": "float"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -7643,6 +7663,10 @@
           },
           "order": {
             "type": "integer"
+          },
+          "price": {
+            "type": "number",
+            "format": "float"
           },
           "createdAt": {
             "type": "string",
@@ -9787,6 +9811,10 @@
                         "order": {
                           "type": "integer"
                         },
+                        "price": {
+                          "type": "number",
+                          "format": "float"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -11583,6 +11611,10 @@
                                                                 },
                                                                 "order": {
                                                                   "type": "integer"
+                                                                },
+                                                                "price": {
+                                                                  "type": "number",
+                                                                  "format": "float"
                                                                 },
                                                                 "createdAt": {
                                                                   "type": "string",
