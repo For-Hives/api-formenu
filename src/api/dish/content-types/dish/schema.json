@@ -221,12 +221,12 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::ingredient.ingredient",
-      "mappedBy": "dishes",
       "pluginOptions": {
         "translate": {
           "translate": "translate"
         }
-      }
+      },
+      "mappedBy": "dishes"
     },
     "order": {
       "pluginOptions": {

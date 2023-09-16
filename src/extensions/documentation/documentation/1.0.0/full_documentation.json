@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-09-16T13:53:53.572Z"
+    "x-generation-date": "2023-09-16T13:56:57.576Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1782,6 +1782,17 @@
                                                                       }
                                                                     }
                                                                   }
+                                                                },
+                                                                "activated": {
+                                                                  "type": "boolean"
+                                                                },
+                                                                "available_date_start": {
+                                                                  "type": "string",
+                                                                  "format": "date"
+                                                                },
+                                                                "available_date_end": {
+                                                                  "type": "string",
+                                                                  "format": "date"
                                                                 },
                                                                 "createdAt": {
                                                                   "type": "string",
@@ -4477,6 +4488,17 @@
                                                                                                   }
                                                                                                 }
                                                                                               }
+                                                                                            },
+                                                                                            "activated": {
+                                                                                              "type": "boolean"
+                                                                                            },
+                                                                                            "available_date_start": {
+                                                                                              "type": "string",
+                                                                                              "format": "date"
+                                                                                            },
+                                                                                            "available_date_end": {
+                                                                                              "type": "string",
+                                                                                              "format": "date"
                                                                                             },
                                                                                             "createdAt": {
                                                                                               "type": "string",
@@ -7478,6 +7500,17 @@
                                           }
                                         }
                                       },
+                                      "activated": {
+                                        "type": "boolean"
+                                      },
+                                      "available_date_start": {
+                                        "type": "string",
+                                        "format": "date"
+                                      },
+                                      "available_date_end": {
+                                        "type": "string",
+                                        "format": "date"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -7771,6 +7804,17 @@
               "example": "string or id"
             }
           },
+          "activated": {
+            "type": "boolean"
+          },
+          "available_date_start": {
+            "type": "string",
+            "format": "date"
+          },
+          "available_date_end": {
+            "type": "string",
+            "format": "date"
+          },
           "locale": {
             "type": "string"
           }
@@ -7801,6 +7845,17 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "activated": {
+                "type": "boolean"
+              },
+              "available_date_start": {
+                "type": "string",
+                "format": "date"
+              },
+              "available_date_end": {
+                "type": "string",
+                "format": "date"
               },
               "locale": {
                 "type": "string"
@@ -9747,6 +9802,17 @@
                                           }
                                         }
                                       },
+                                      "activated": {
+                                        "type": "boolean"
+                                      },
+                                      "available_date_start": {
+                                        "type": "string",
+                                        "format": "date"
+                                      },
+                                      "available_date_end": {
+                                        "type": "string",
+                                        "format": "date"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -9875,6 +9941,17 @@
                 }
               }
             }
+          },
+          "activated": {
+            "type": "boolean"
+          },
+          "available_date_start": {
+            "type": "string",
+            "format": "date"
+          },
+          "available_date_end": {
+            "type": "string",
+            "format": "date"
           },
           "createdAt": {
             "type": "string",
@@ -11547,6 +11624,17 @@
                                                                                     }
                                                                                   }
                                                                                 }
+                                                                              },
+                                                                              "activated": {
+                                                                                "type": "boolean"
+                                                                              },
+                                                                              "available_date_start": {
+                                                                                "type": "string",
+                                                                                "format": "date"
+                                                                              },
+                                                                              "available_date_end": {
+                                                                                "type": "string",
+                                                                                "format": "date"
                                                                               },
                                                                               "createdAt": {
                                                                                 "type": "string",
