@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-09-16T13:56:57.576Z"
+    "x-generation-date": "2023-09-16T13:58:40.439Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1861,6 +1861,14 @@
                                                   "price": {
                                                     "type": "number",
                                                     "format": "float"
+                                                  },
+                                                  "available_date_start": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                  },
+                                                  "available_date_end": {
+                                                    "type": "string",
+                                                    "format": "date"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -4568,6 +4576,14 @@
                                                                                 "type": "number",
                                                                                 "format": "float"
                                                                               },
+                                                                              "available_date_start": {
+                                                                                "type": "string",
+                                                                                "format": "date"
+                                                                              },
+                                                                              "available_date_end": {
+                                                                                "type": "string",
+                                                                                "format": "date"
+                                                                              },
                                                                               "createdAt": {
                                                                                 "type": "string",
                                                                                 "format": "date-time"
@@ -5367,6 +5383,14 @@
             "type": "number",
             "format": "float"
           },
+          "available_date_start": {
+            "type": "string",
+            "format": "date"
+          },
+          "available_date_end": {
+            "type": "string",
+            "format": "date"
+          },
           "locale": {
             "type": "string"
           }
@@ -5497,6 +5521,14 @@
               "price": {
                 "type": "number",
                 "format": "float"
+              },
+              "available_date_start": {
+                "type": "string",
+                "format": "date"
+              },
+              "available_date_end": {
+                "type": "string",
+                "format": "date"
               },
               "locale": {
                 "type": "string"
@@ -7579,6 +7611,14 @@
                           "type": "number",
                           "format": "float"
                         },
+                        "available_date_start": {
+                          "type": "string",
+                          "format": "date"
+                        },
+                        "available_date_end": {
+                          "type": "string",
+                          "format": "date"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -7700,6 +7740,14 @@
           "price": {
             "type": "number",
             "format": "float"
+          },
+          "available_date_start": {
+            "type": "string",
+            "format": "date"
+          },
+          "available_date_end": {
+            "type": "string",
+            "format": "date"
           },
           "createdAt": {
             "type": "string",
@@ -9881,6 +9929,14 @@
                           "type": "number",
                           "format": "float"
                         },
+                        "available_date_start": {
+                          "type": "string",
+                          "format": "date"
+                        },
+                        "available_date_end": {
+                          "type": "string",
+                          "format": "date"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -11703,6 +11759,14 @@
                                                                 "price": {
                                                                   "type": "number",
                                                                   "format": "float"
+                                                                },
+                                                                "available_date_start": {
+                                                                  "type": "string",
+                                                                  "format": "date"
+                                                                },
+                                                                "available_date_end": {
+                                                                  "type": "string",
+                                                                  "format": "date"
                                                                 },
                                                                 "createdAt": {
                                                                   "type": "string",
