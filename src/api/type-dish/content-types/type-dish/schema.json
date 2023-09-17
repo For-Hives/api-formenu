@@ -4,10 +4,11 @@
   "info": {
     "singularName": "type-dish",
     "pluralName": "type-dishes",
-    "displayName": "TypeDish"
+    "displayName": "TypeDish",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -18,14 +19,15 @@
       "type": "string"
     },
     "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
