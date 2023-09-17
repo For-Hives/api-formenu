@@ -294,6 +294,16 @@
           "translate": "translate"
         }
       }
+    },
+    "type_dish": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::type-dish.type-dish",
+      "pluginOptions": {
+        "translate": {
+          "translate": "translate"
+        }
+      }
     }
   }
 }
