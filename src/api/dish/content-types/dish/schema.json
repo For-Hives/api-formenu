@@ -294,19 +294,6 @@
           "translate": "translate"
         }
       }
-    },
-    "type_dish": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        },
-        "translate": {
-          "translate": "translate"
-        }
-      },
-      "component": "type-dish.type-dish"
     }
   }
 }
