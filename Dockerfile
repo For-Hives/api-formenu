@@ -1,9 +1,8 @@
-FROM node:18-alpine
+FROM node:18-bullseye
 
 WORKDIR /app
 
-COPY ./package.json ./
-COPY ./yarn.lock ./
+COPY package.json yarn.lock ./
 
 RUN yarn install --production --frozen-lockfile
 
