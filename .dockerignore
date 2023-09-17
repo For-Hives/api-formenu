@@ -10,3 +10,8 @@ tests/
 .eslintrc
 README.md
 renovate.json
+.tmp/
+build/
+.cache/
+node_modules/
+.env
