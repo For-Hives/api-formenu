@@ -4,7 +4,8 @@
   "info": {
     "singularName": "type-dish",
     "pluralName": "type-dishes",
-    "displayName": "TypeDish"
+    "displayName": "TypeDish",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -15,7 +16,7 @@
     }
   },
   "attributes": {
-    "color": {
+    "colorz": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -27,14 +28,15 @@
       "type": "string"
     },
     "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -43,6 +45,17 @@
           "translate": "translate"
         }
       }
+    },
+    "names": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      },
+      "type": "string"
     }
   }
 }
