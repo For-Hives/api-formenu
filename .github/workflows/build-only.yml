@@ -22,9 +22,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Use and cache Node 18.x Yarn
+        uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+          node-version: 18.x
       - name: Yarn install and build
         run: |
-          yarn install
+          yarn install --frozen-lockfile
           yarn build
       - name: Try Building image
         uses: docker/build-push-action@v4
