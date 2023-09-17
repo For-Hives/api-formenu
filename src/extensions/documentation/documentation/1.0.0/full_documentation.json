@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-09-17T15:34:24.409Z"
+    "x-generation-date": "2023-09-17T15:35:04.080Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2024,7 +2024,7 @@
                                                           "attributes": {
                                                             "type": "object",
                                                             "properties": {
-                                                              "color": {
+                                                              "name": {
                                                                 "type": "string"
                                                               },
                                                               "icon": {
@@ -2166,7 +2166,7 @@
                                                                   }
                                                                 }
                                                               },
-                                                              "name": {
+                                                              "color": {
                                                                 "type": "string"
                                                               },
                                                               "createdAt": {
@@ -5106,7 +5106,7 @@
                                                                                       "attributes": {
                                                                                         "type": "object",
                                                                                         "properties": {
-                                                                                          "color": {
+                                                                                          "name": {
                                                                                             "type": "string"
                                                                                           },
                                                                                           "icon": {
@@ -5248,7 +5248,7 @@
                                                                                               }
                                                                                             }
                                                                                           },
-                                                                                          "name": {
+                                                                                          "color": {
                                                                                             "type": "string"
                                                                                           },
                                                                                           "createdAt": {
@@ -8544,7 +8544,7 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "color": {
+                                    "name": {
                                       "type": "string"
                                     },
                                     "icon": {
@@ -8686,7 +8686,7 @@
                                         }
                                       }
                                     },
-                                    "name": {
+                                    "color": {
                                       "type": "string"
                                     },
                                     "createdAt": {
@@ -11377,7 +11377,7 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "color": {
+                                    "name": {
                                       "type": "string"
                                     },
                                     "icon": {
@@ -11519,7 +11519,7 @@
                                         }
                                       }
                                     },
-                                    "name": {
+                                    "color": {
                                       "type": "string"
                                     },
                                     "createdAt": {
@@ -13567,7 +13567,7 @@
                                                                         "attributes": {
                                                                           "type": "object",
                                                                           "properties": {
-                                                                            "color": {
+                                                                            "name": {
                                                                               "type": "string"
                                                                             },
                                                                             "icon": {
@@ -13709,7 +13709,7 @@
                                                                                 }
                                                                               }
                                                                             },
-                                                                            "name": {
+                                                                            "color": {
                                                                               "type": "string"
                                                                             },
                                                                             "createdAt": {
@@ -14544,7 +14544,7 @@
         ],
         "type": "object",
         "properties": {
-          "color": {
+          "name": {
             "type": "string"
           },
           "icon": {
@@ -14558,7 +14558,7 @@
             ],
             "example": "string or id"
           },
-          "name": {
+          "color": {
             "type": "string"
           },
           "locale": {
@@ -14575,7 +14575,7 @@
           "data": {
             "type": "object",
             "properties": {
-              "color": {
+              "name": {
                 "type": "string"
               },
               "icon": {
@@ -14589,7 +14589,7 @@
                 ],
                 "example": "string or id"
               },
-              "name": {
+              "color": {
                 "type": "string"
               },
               "locale": {
@@ -14716,7 +14716,7 @@
       "TypeDish": {
         "type": "object",
         "properties": {
-          "color": {
+          "name": {
             "type": "string"
           },
           "icon": {
@@ -15340,7 +15340,7 @@
               }
             }
           },
-          "name": {
+          "color": {
             "type": "string"
           },
           "createdAt": {

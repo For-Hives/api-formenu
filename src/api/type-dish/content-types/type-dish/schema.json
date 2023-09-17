@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "colorz": {
+    "name": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -46,7 +46,7 @@
         }
       }
     },
-    "names": {
+    "color": {
       "pluginOptions": {
         "i18n": {
           "localized": true
