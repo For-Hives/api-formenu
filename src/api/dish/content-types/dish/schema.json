@@ -56,7 +56,7 @@
       "type": "boolean",
       "default": false
     },
-    "is_allergen_shellfishs": {
+    "is_allergen_shellfishes": {
       "pluginOptions": {
         "i18n": {
           "localized": true
