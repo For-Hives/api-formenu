@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-09-18T20:40:45.584Z"
+    "x-generation-date": "2023-09-18T20:50:39.748Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1647,7 +1647,7 @@
                                                   "is_allergen_gluten": {
                                                     "type": "boolean"
                                                   },
-                                                  "is_allergen_shellfishs": {
+                                                  "is_allergen_shellfishes": {
                                                     "type": "boolean"
                                                   },
                                                   "is_allergen_eggs": {
@@ -4717,7 +4717,7 @@
                                                                               "is_allergen_gluten": {
                                                                                 "type": "boolean"
                                                                               },
-                                                                              "is_allergen_shellfishs": {
+                                                                              "is_allergen_shellfishes": {
                                                                                 "type": "boolean"
                                                                               },
                                                                               "is_allergen_eggs": {
@@ -5981,7 +5981,7 @@
           "is_allergen_gluten": {
             "type": "boolean"
           },
-          "is_allergen_shellfishs": {
+          "is_allergen_shellfishes": {
             "type": "boolean"
           },
           "is_allergen_eggs": {
@@ -6142,7 +6142,7 @@
               "is_allergen_gluten": {
                 "type": "boolean"
               },
-              "is_allergen_shellfishs": {
+              "is_allergen_shellfishes": {
                 "type": "boolean"
               },
               "is_allergen_eggs": {
@@ -6413,7 +6413,7 @@
           "is_allergen_gluten": {
             "type": "boolean"
           },
-          "is_allergen_shellfishs": {
+          "is_allergen_shellfishes": {
             "type": "boolean"
           },
           "is_allergen_eggs": {
@@ -6487,7 +6487,7 @@
                         "is_allergen_gluten": {
                           "type": "boolean"
                         },
-                        "is_allergen_shellfishs": {
+                        "is_allergen_shellfishes": {
                           "type": "boolean"
                         },
                         "is_allergen_eggs": {
@@ -9308,7 +9308,7 @@
                         "is_allergen_gluten": {
                           "type": "boolean"
                         },
-                        "is_allergen_shellfishs": {
+                        "is_allergen_shellfishes": {
                           "type": "boolean"
                         },
                         "is_allergen_eggs": {
@@ -13142,7 +13142,7 @@
                                                                 "is_allergen_gluten": {
                                                                   "type": "boolean"
                                                                 },
-                                                                "is_allergen_shellfishs": {
+                                                                "is_allergen_shellfishes": {
                                                                   "type": "boolean"
                                                                 },
                                                                 "is_allergen_eggs": {
