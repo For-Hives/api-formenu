@@ -82,6 +82,9 @@ module.exports = {
               },
               dishes: {
                 populate: {
+                  ingredients:{
+                    populate: '*'
+                  },
                   dishes: {
                     populate: '*'
                   },
