@@ -1,12 +1,8 @@
 "use strict";
 
-/**
- * init-makeup service
- */
-
 module.exports = {
   allMenu: async () => {
-    const data = await strapi.entityService.findMany(
+    let data = await strapi.entityService.findMany(
       "api::menu.menu",
       {
         fields: [
@@ -112,6 +108,23 @@ module.exports = {
       }
     );
 
+    /**
+     * Remove props recursively
+     * @param obj
+     */
+    const removePropsRecursively = (obj) => {
+      if (obj && typeof obj === 'object') {
+        delete obj.createdBy;
+        delete obj.updatedBy;
+
+        for (let key in obj) {
+          if (obj.hasOwnProperty(key)) {
+            removePropsRecursively(obj[key]);
+          }
+        }
+      }
+    }
+    data.forEach(record => removePropsRecursively(record));
     return data;
   },
 };
