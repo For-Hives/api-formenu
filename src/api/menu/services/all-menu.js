@@ -46,7 +46,7 @@ module.exports = {
               'depth',
               'order'
             ],
-            sort: { order: 'ASC'},
+            sort: {order: 'ASC'},
             populate: {
               icon: {
                 populate: '*'
@@ -78,11 +78,11 @@ module.exports = {
                     populate: '*'
                   }
                 },
-                sort: { order: 'ASC'},
+                sort: {order: 'ASC'},
               },
               dishes: {
                 populate: {
-                  ingredients:{
+                  ingredients: {
                     populate: '*'
                   },
                   dishes: {
@@ -92,7 +92,7 @@ module.exports = {
                     populate: '*'
                   },
                   type_dish: {
-                    fields:[
+                    fields: [
                       'id',
                       'name',
                       'color',
