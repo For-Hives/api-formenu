@@ -50,6 +50,7 @@ module.exports = {
               'depth',
               'order'
             ],
+            order: 'order ASC',
             populate: {
               icon: {
                 populate: '*'
@@ -80,7 +81,8 @@ module.exports = {
                   icon: {
                     populate: '*'
                   }
-                }
+                },
+                order: 'order ASC'
               },
               dishes: {
                 populate: {
