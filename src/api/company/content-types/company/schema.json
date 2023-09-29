@@ -126,12 +126,47 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::menu.menu",
-      "mappedBy": "company",
       "pluginOptions": {
         "translate": {
           "translate": "translate"
         }
-      }
+      },
+      "mappedBy": "company"
+    },
+    "color": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      },
+      "type": "string"
+    },
+    "fonts": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "lato"
+      ],
+      "default": "lato"
+    },
+    "fonts_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "fraunces"
+      ],
+      "default": "fraunces"
     }
   }
 }
