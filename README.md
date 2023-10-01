@@ -15,8 +15,8 @@
 ```
 git clone
 -> add .env file
-npm install
-npm run develop
+yarn
+yarn run develop
 ```
 
 ## Tech stack 💻
