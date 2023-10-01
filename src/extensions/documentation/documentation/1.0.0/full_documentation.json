@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-10-01T12:47:03.617Z"
+    "x-generation-date": "2023-10-01T12:48:36.205Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1834,6 +1834,23 @@
                                                                 "available_date_end": {
                                                                   "type": "string",
                                                                   "format": "date"
+                                                                },
+                                                                "company": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "data": {
+                                                                      "type": "object",
+                                                                      "properties": {
+                                                                        "id": {
+                                                                          "type": "number"
+                                                                        },
+                                                                        "attributes": {
+                                                                          "type": "object",
+                                                                          "properties": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
                                                                 },
                                                                 "createdAt": {
                                                                   "type": "string",
@@ -5143,6 +5160,23 @@
                                                                                             "available_date_end": {
                                                                                               "type": "string",
                                                                                               "format": "date"
+                                                                                            },
+                                                                                            "company": {
+                                                                                              "type": "object",
+                                                                                              "properties": {
+                                                                                                "data": {
+                                                                                                  "type": "object",
+                                                                                                  "properties": {
+                                                                                                    "id": {
+                                                                                                      "type": "number"
+                                                                                                    },
+                                                                                                    "attributes": {
+                                                                                                      "type": "object",
+                                                                                                      "properties": {}
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
                                                                                             },
                                                                                             "createdAt": {
                                                                                               "type": "string",
@@ -9003,6 +9037,23 @@
                                         "type": "string",
                                         "format": "date"
                                       },
+                                      "company": {
+                                        "type": "object",
+                                        "properties": {
+                                          "data": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {}
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -9857,6 +9908,17 @@
             "type": "string",
             "format": "date"
           },
+          "company": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "example": "string or id"
+          },
           "locale": {
             "type": "string"
           }
@@ -9898,6 +9960,17 @@
               "available_date_end": {
                 "type": "string",
                 "format": "date"
+              },
+              "company": {
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "example": "string or id"
               },
               "locale": {
                 "type": "string"
@@ -12048,6 +12121,23 @@
                                         "type": "string",
                                         "format": "date"
                                       },
+                                      "company": {
+                                        "type": "object",
+                                        "properties": {
+                                          "data": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {}
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -12556,6 +12646,23 @@
           "available_date_end": {
             "type": "string",
             "format": "date"
+          },
+          "company": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            }
           },
           "createdAt": {
             "type": "string",
@@ -14301,6 +14408,23 @@
                                                                               "available_date_end": {
                                                                                 "type": "string",
                                                                                 "format": "date"
+                                                                              },
+                                                                              "company": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "data": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "id": {
+                                                                                        "type": "number"
+                                                                                      },
+                                                                                      "attributes": {
+                                                                                        "type": "object",
+                                                                                        "properties": {}
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
                                                                               },
                                                                               "createdAt": {
                                                                                 "type": "string",

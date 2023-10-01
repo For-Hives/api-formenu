@@ -1315,6 +1315,16 @@ export interface ApiIngredientIngredient extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    company: Attribute.Relation<
+      'api::ingredient.ingredient',
+      'oneToOne',
+      'api::company.company'
+    > &
+      Attribute.SetPluginOptions<{
+        translate: {
+          translate: 'translate';
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
