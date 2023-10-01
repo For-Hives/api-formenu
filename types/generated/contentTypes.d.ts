@@ -967,6 +967,29 @@ export interface ApiCompanyCompany extends Schema.CollectionType {
           translate: 'translate';
         };
       }>;
+    color: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
+    fonts: Attribute.Enumeration<['lato']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'lato'>;
+    fonts_title: Attribute.Enumeration<['fraunces']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'fraunces'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1419,6 +1442,38 @@ export interface ApiMenuMenu extends Schema.CollectionType {
           translate: 'translate';
         };
       }>;
+    background: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
+    color: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
+    fonts: Attribute.Enumeration<['lato']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'lato'>;
+    fonts_title: Attribute.Enumeration<['fraunces']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'fraunces'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
