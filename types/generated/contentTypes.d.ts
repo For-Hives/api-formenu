@@ -1234,6 +1234,16 @@ export interface ApiDishDish extends Schema.CollectionType {
           translate: 'translate';
         };
       }>;
+    company: Attribute.Relation<
+      'api::dish.dish',
+      'oneToOne',
+      'api::company.company'
+    > &
+      Attribute.SetPluginOptions<{
+        translate: {
+          translate: 'translate';
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::dish.dish', 'oneToOne', 'admin::user'> &
