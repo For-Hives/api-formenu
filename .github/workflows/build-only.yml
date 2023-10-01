@@ -15,6 +15,9 @@ env:
   S3_ENDPOINT: "localhost"
   S3_SSL: false
   S3_PORT: 9000
+  API_URL: "localhost:1337"
+  DEEPL_API_KEY: ""
+  DEEPL_API_URL: ""
 
 jobs:
   just-build:
