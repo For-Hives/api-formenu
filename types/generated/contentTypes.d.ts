@@ -828,6 +828,16 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           translate: 'translate';
         };
       }>;
+    company: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'api::company.company'
+    > &
+      Attribute.SetPluginOptions<{
+        translate: {
+          translate: 'translate';
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1247,6 +1257,16 @@ export interface ApiDishDish extends Schema.CollectionType {
           translate: 'translate';
         };
       }>;
+    company: Attribute.Relation<
+      'api::dish.dish',
+      'oneToOne',
+      'api::company.company'
+    > &
+      Attribute.SetPluginOptions<{
+        translate: {
+          translate: 'translate';
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::dish.dish', 'oneToOne', 'admin::user'> &
@@ -1316,6 +1336,16 @@ export interface ApiIngredientIngredient extends Schema.CollectionType {
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    company: Attribute.Relation<
+      'api::ingredient.ingredient',
+      'oneToOne',
+      'api::company.company'
+    > &
+      Attribute.SetPluginOptions<{
+        translate: {
+          translate: 'translate';
         };
       }>;
     createdAt: Attribute.DateTime;

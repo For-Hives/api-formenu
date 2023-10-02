@@ -1,57 +1,84 @@
-# 🚀 Getting started with Strapi
+# 🍔 API ForMenu 🍔
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+#### _A digital menu for a whole new experience!_
 
-### `develop`
+![img.png](img.png)
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+> **(front app github project : https://github.com/For-Hives/formenu)**
 
-```
-npm run develop
-# or
-yarn develop
-```
+## How to run ??
 
-### `start`
+> **(use pnpm // npm // yarn but don't push the lock file)**
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+#### _dev_
 
 ```
-npm run start
-# or
-yarn start
+git clone
+-> add .env file
+yarn
+yarn run develop
 ```
 
-### `build`
+## Tech stack 💻
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+That is the list of technologies that ForMenu use.
 
-```
-npm run build
-# or
-yarn build
-```
+> **Backend**
+>
+> > - [Strapi](https://strapi.io/)
+> > - [PostgreSQL](https://www.postgresql.org/)
 
-## ⚙️ Deployment
+> **Front**
+>
+> > - [NextJs (ReactJS)](https://nextjs.org/)
+> > - [TailwindCSS](https://tailwindcss.com/)
+> > - [TailwindUI](https://tailwindui.com/)
+> > - [HeadlessUI](https://headlessui.com/)
+> > - [Prettier](https://prettier.io/)
+> > - [EsLint](https://eslint.org/)
+> > - [Husky](https://typicode.github.io/husky/#/)
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+> **CI/CD**
+>
+> > - GitHub CI
+> > - [Renovate](https://www.mend.io/renovate/)
 
-## 📚 Learn more
+> **Serveur**
+>
+> > - [CapRover](https://caprover.com/)
+> > - VPS Linux (Debian)
+> > - [Docker](https://www.docker.com/)
+> > - [Fail2Ban](https://www.fail2ban.org/wiki/index.php/Main_Page)
+> > - [LetsEncrypt](https://letsencrypt.org/)
+> > - [UFW](https://doc.ubuntu-fr.org/ufw)
+> > - [DNS (OVH / CloudFlare)](https://cloudflare.com/)
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+> **Monitoring**
+>
+> > - [NetData](https://www.netdata.cloud/)
+> > - [BetterUptime](https://betteruptime.com/)
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+> **Tools**
+>
+> > - [OpenCommit](https://github.com/di-sukharev/opencommit)
+> > - [Git Kraken](https://www.gitkraken.com/)
+> > - [IntelliJ](https://www.jetbrains.com/idea/)
+> > - [Wakatime](https://wakatime.com/)
+> > - [GitHub Copilot](https://copilot.github.com/)
+> > - [ChatGPT](https://chat.openai.com/)
+> > - [Syncthings](https://syncthing.net/)
+> > - [TinyPNG](https://tinypng.com/)
+> > - [cwebp](https://developers.google.com/speed/webp/docs/cwebp)
+> > - [PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/)
+> > - Google suit
+> > - [Insomnia](https://insomnia.rest/)
+> > - [TMUX](https://tmuxcheatsheet.com/)
+> > - [Discord](https://discord.com/)
 
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+> **Design**
+>
+> > - [Adobe Photoshop](https://www.adobe.com/products/photoshop.html)
+> > - [Adobe Illustrator](https://www.adobe.com/products/illustrator.html)
+> > - [Adobe Firefly](https://www.adobe.com/sensei/generative-ai/firefly.html)
+> > - [Figma](https://www.figma.com/)
+> > - [MidJourney](https://midjourney.com/)
