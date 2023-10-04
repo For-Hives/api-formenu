@@ -1,9 +1,5 @@
 "use strict";
 
-/**
- * A set of functions called "actions" for `init-makeup`
- */
-
 module.exports = {
   async allMenu(ctx, next) {
     try {
