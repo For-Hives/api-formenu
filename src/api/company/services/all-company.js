@@ -13,105 +13,113 @@ module.exports = {
           'street',
           'postcode',
         ],
-        populate:'*'
-        // populate: {
-        //   image: {
-        //     populate: '*'
-        //   },
-        //   company: {
-        //     fields: [
-        //       'id',
-        //       'name',
-        //       'description',
-        //       'country',
-        //       'city',
-        //       'street',
-        //       'postcode'
-        //     ],
-        //     populate: {
-        //       logo: {
-        //         populate: '*'
-        //       },
-        //       background: {
-        //         populate: '*'
-        //       },
-        //       // companys:{
-        //       //   populate: '*'
-        //       // }
-        //     }
-        //   },
-        //   categories: {
-        //     fields: [
-        //       'id',
-        //       'name',
-        //       'locale',
-        //       'depth',
-        //       'order'
-        //     ],
-        //     sort: {order: 'ASC'},
-        //     populate: {
-        //       icon: {
-        //         populate: '*'
-        //       },
-        //       category: {
-        //         fields: [
-        //           'id',
-        //           'name',
-        //           'locale',
-        //           'depth',
-        //           'order'
-        //         ],
-        //         populate: {
-        //           icon: {
-        //             populate: '*'
-        //           }
-        //         }
-        //       },
-        //       categories: {
-        //         fields: [
-        //           'id',
-        //           'name',
-        //           'locale',
-        //           'depth',
-        //           'order'
-        //         ],
-        //         populate: {
-        //           icon: {
-        //             populate: '*'
-        //           }
-        //         },
-        //         sort: {order: 'ASC'},
-        //       },
-        //       dishes: {
-        //         populate: {
-        //           ingredients: {
-        //             populate: '*'
-        //           },
-        //           dishes: {
-        //             populate: '*'
-        //           },
-        //           image: {
-        //             populate: '*'
-        //           },
-        //           type_dish: {
-        //             fields: [
-        //               'id',
-        //               'name',
-        //               'color',
-        //             ],
-        //             populate: {
-        //               icon: {
-        //                 populate: '*'
-        //               }
-        //             }
-        //           }
-        //         }
-        //       }
-        //     }
-        //   }
-        // },
+        populate: {
+          menus: {
+            populate: {
+              image: {
+                populate: '*'
+              },
+              company: {
+                fields: [
+                  'id',
+                  'name',
+                  'description',
+                  'country',
+                  'city',
+                  'street',
+                  'postcode'
+                ],
+                populate: {
+                  logo: {
+                    populate: '*'
+                  },
+                  background: {
+                    populate: '*'
+                  },
+                  // companys:{
+                  //   populate: '*'
+                  // }
+                }
+              },
+              categories: {
+                fields: [
+                  'id',
+                  'name',
+                  'locale',
+                  'depth',
+                  'order'
+                ],
+                sort: {order: 'ASC'},
+                populate: {
+                  icon: {
+                    populate: '*'
+                  },
+                  category: {
+                    fields: [
+                      'id',
+                      'name',
+                      'locale',
+                      'depth',
+                      'order'
+                    ],
+                    populate: {
+                      icon: {
+                        populate: '*'
+                      }
+                    }
+                  },
+                  categories: {
+                    fields: [
+                      'id',
+                      'name',
+                      'locale',
+                      'depth',
+                      'order'
+                    ],
+                    populate: {
+                      icon: {
+                        populate: '*'
+                      }
+                    },
+                    sort: {order: 'ASC'},
+                  },
+                  dishes: {
+                    populate: {
+                      ingredients: {
+                        populate: '*'
+                      },
+                      dishes: {
+                        populate: '*'
+                      },
+                      image: {
+                        populate: '*'
+                      },
+                      type_dish: {
+                        fields: [
+                          'id',
+                          'name',
+                          'color',
+                        ],
+                        populate: {
+                          icon: {
+                            populate: '*'
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+          },
+          logo: {
+            populate: '*'
+          },
+        }
       }
     );
+
+    console.log('data', data);
 
     // /**
     //  * Remove props recursively
