@@ -990,6 +990,16 @@ export interface ApiCompanyCompany extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<'fraunces'>;
+    slug: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

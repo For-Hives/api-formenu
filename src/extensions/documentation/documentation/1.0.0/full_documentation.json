@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-10-04T14:52:00.284Z"
+    "x-generation-date": "2023-10-06T12:59:21.394Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1527,6 +1527,9 @@
                                     "enum": [
                                       "fraunces"
                                     ]
+                                  },
+                                  "slug": {
+                                    "type": "string"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -3320,6 +3323,9 @@
               "fraunces"
             ]
           },
+          "slug": {
+            "type": "string"
+          },
           "locale": {
             "type": "string"
           }
@@ -3419,6 +3425,9 @@
                 "enum": [
                   "fraunces"
                 ]
+              },
+              "slug": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -6271,6 +6280,9 @@
                                         "fraunces"
                                       ]
                                     },
+                                    "slug": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -6414,6 +6426,9 @@
             "enum": [
               "fraunces"
             ]
+          },
+          "slug": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -8273,6 +8288,9 @@
                                                               "enum": [
                                                                 "fraunces"
                                                               ]
+                                                            },
+                                                            "slug": {
+                                                              "type": "string"
                                                             },
                                                             "createdAt": {
                                                               "type": "string",
@@ -11357,6 +11375,9 @@
                                                               "enum": [
                                                                 "fraunces"
                                                               ]
+                                                            },
+                                                            "slug": {
+                                                              "type": "string"
                                                             },
                                                             "createdAt": {
                                                               "type": "string",
@@ -15518,6 +15539,9 @@
                         "enum": [
                           "fraunces"
                         ]
+                      },
+                      "slug": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",

@@ -167,6 +167,18 @@
         "fraunces"
       ],
       "default": "fraunces"
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      },
+      "type": "string",
+      "unique": true
     }
   }
 }
