@@ -21,25 +21,8 @@ module.exports = {
               },
               company: {
                 fields: [
-                  'id',
-                  'name',
-                  'description',
-                  'country',
-                  'city',
-                  'street',
-                  'postcode'
+                  'id'
                 ],
-                populate: {
-                  logo: {
-                    populate: '*'
-                  },
-                  background: {
-                    populate: '*'
-                  },
-                  // companys:{
-                  //   populate: '*'
-                  // }
-                }
               },
               categories: {
                 fields: [
@@ -53,6 +36,11 @@ module.exports = {
                 populate: {
                   icon: {
                     populate: '*'
+                  },
+                  company: {
+                    fields: [
+                      'id'
+                    ],
                   },
                   category: {
                     fields: [
@@ -79,7 +67,12 @@ module.exports = {
                     populate: {
                       icon: {
                         populate: '*'
-                      }
+                      },
+                      company: {
+                        fields: [
+                          'id'
+                        ],
+                      },
                     },
                     sort: {order: 'ASC'},
                   },
@@ -93,6 +86,11 @@ module.exports = {
                       },
                       image: {
                         populate: '*'
+                      },
+                      company: {
+                        fields: [
+                          'id'
+                        ],
                       },
                       type_dish: {
                         fields: [
