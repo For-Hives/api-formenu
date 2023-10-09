@@ -12,6 +12,7 @@ module.exports = {
           'city',
           'street',
           'postcode',
+          'slug'
         ],
         populate: {
           menus: {
