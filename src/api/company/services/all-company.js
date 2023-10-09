@@ -20,9 +20,7 @@ module.exports = {
                 populate: '*'
               },
               company: {
-                fields: [
-                  'id'
-                ],
+                populate: '*'
               },
               categories: {
                 fields: [
@@ -38,9 +36,7 @@ module.exports = {
                     populate: '*'
                   },
                   company: {
-                    fields: [
-                      'id'
-                    ],
+                    populate: '*'
                   },
                   category: {
                     fields: [
@@ -54,7 +50,10 @@ module.exports = {
                       icon: {
                         populate: '*'
                       }
-                    }
+                    },
+                    company: {
+                      populate: '*'
+                    },
                   },
                   categories: {
                     fields: [
@@ -69,9 +68,7 @@ module.exports = {
                         populate: '*'
                       },
                       company: {
-                        fields: [
-                          'id'
-                        ],
+                        populate: '*'
                       },
                     },
                     sort: {order: 'ASC'},
@@ -88,9 +85,7 @@ module.exports = {
                         populate: '*'
                       },
                       company: {
-                        fields: [
-                          'id'
-                        ],
+                        populate: '*'
                       },
                       type_dish: {
                         fields: [
@@ -117,12 +112,10 @@ module.exports = {
       }
     );
 
-    console.log('data', data);
-
-    // /**
-    //  * Remove props recursively
-    //  * @param obj
-    //  */
+    /**
+     * Remove props recursively
+     * @param obj
+     */
     // const removePropsRecursively = (obj) => {
     //   if (obj && typeof obj === 'object') {
     //     delete obj.createdBy;
