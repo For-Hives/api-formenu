@@ -4,7 +4,8 @@
   "info": {
     "singularName": "content-website",
     "pluralName": "content-websites",
-    "displayName": "content_website"
+    "displayName": "content_website",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -37,15 +38,16 @@
       },
       "type": "string"
     },
-    "background_images": {
+    "home_background_images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -54,6 +56,46 @@
           "translate": "translate"
         }
       }
+    },
+    "home_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      }
+    },
+    "home_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      },
+      "type": "string"
+    },
+    "home_subtitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      },
+      "type": "string"
     }
   }
 }

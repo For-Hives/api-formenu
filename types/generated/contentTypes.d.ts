@@ -1029,6 +1029,7 @@ export interface ApiContentWebsiteContentWebsite extends Schema.SingleType {
     singularName: 'content-website';
     pluralName: 'content-websites';
     displayName: 'content_website';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1057,7 +1058,34 @@ export interface ApiContentWebsiteContentWebsite extends Schema.SingleType {
           translate: 'translate';
         };
       }>;
-    background_images: Attribute.Media &
+    home_background_images: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
+    home_image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
+    home_title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
+    home_subtitle: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
