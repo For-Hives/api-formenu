@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-10-23T13:20:39.981Z"
+    "x-generation-date": "2023-10-23T13:21:37.845Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6516,42 +6516,8 @@
         ],
         "type": "object",
         "properties": {
-          "metadata_title": {
-            "type": "string"
-          },
-          "metadata_description": {
-            "type": "string"
-          },
-          "home_background_images": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "string"
-                }
-              ],
-              "example": "string or id"
-            }
-          },
-          "home_image": {
-            "oneOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "example": "string or id"
-          },
-          "home_title": {
-            "type": "string"
-          },
-          "home_subtitle": {
-            "type": "string"
+          "content": {
+            "$ref": "#/components/schemas/ContentWebsiteContentWebsiteComponent"
           },
           "locale": {
             "type": "string"
@@ -6567,42 +6533,8 @@
           "data": {
             "type": "object",
             "properties": {
-              "metadata_title": {
-                "type": "string"
-              },
-              "metadata_description": {
-                "type": "string"
-              },
-              "home_background_images": {
-                "type": "array",
-                "items": {
-                  "oneOf": [
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ],
-                  "example": "string or id"
-                }
-              },
-              "home_image": {
-                "oneOf": [
-                  {
-                    "type": "integer"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ],
-                "example": "string or id"
-              },
-              "home_title": {
-                "type": "string"
-              },
-              "home_subtitle": {
-                "type": "string"
+              "content": {
+                "$ref": "#/components/schemas/ContentWebsiteContentWebsiteComponent"
               },
               "locale": {
                 "type": "string"
@@ -6728,10 +6660,105 @@
       "ContentWebsite": {
         "type": "object",
         "properties": {
+          "content": {
+            "$ref": "#/components/schemas/ContentWebsiteContentWebsiteComponent"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            }
+          },
+          "updatedBy": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            }
+          },
+          "localizations": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ContentWebsite"
+                }
+              }
+            }
+          },
+          "locale": {
+            "type": "string"
+          }
+        }
+      },
+      "ContentWebsiteResponseDataObject": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/ContentWebsite"
+          }
+        }
+      },
+      "ContentWebsiteResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ContentWebsiteResponseDataObject"
+          },
+          "meta": {
+            "type": "object"
+          }
+        }
+      },
+      "ContentWebsiteContentWebsiteComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
           "metadata_title": {
             "type": "string"
           },
           "metadata_description": {
+            "type": "string"
+          },
+          "home_title": {
+            "type": "string"
+          },
+          "home_subtitle": {
             "type": "string"
           },
           "home_background_images": {
@@ -7497,90 +7524,6 @@
                 }
               }
             }
-          },
-          "home_title": {
-            "type": "string"
-          },
-          "home_subtitle": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "createdBy": {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "attributes": {
-                    "type": "object",
-                    "properties": {}
-                  }
-                }
-              }
-            }
-          },
-          "updatedBy": {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "number"
-                  },
-                  "attributes": {
-                    "type": "object",
-                    "properties": {}
-                  }
-                }
-              }
-            }
-          },
-          "localizations": {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ContentWebsite"
-                }
-              }
-            }
-          },
-          "locale": {
-            "type": "string"
-          }
-        }
-      },
-      "ContentWebsiteResponseDataObject": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "attributes": {
-            "$ref": "#/components/schemas/ContentWebsite"
-          }
-        }
-      },
-      "ContentWebsiteResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/ContentWebsiteResponseDataObject"
-          },
-          "meta": {
-            "type": "object"
           }
         }
       },
