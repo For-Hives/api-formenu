@@ -179,6 +179,19 @@
       },
       "type": "string",
       "unique": true
+    },
+    "content": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      },
+      "component": "content-website.content-website"
     }
   }
 }

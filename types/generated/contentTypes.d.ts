@@ -1000,6 +1000,15 @@ export interface ApiCompanyCompany extends Schema.CollectionType {
           translate: 'translate';
         };
       }>;
+    content: Attribute.Component<'content-website.content-website'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
