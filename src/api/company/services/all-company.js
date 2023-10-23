@@ -106,9 +106,9 @@ module.exports = {
               }
             },
           },
-          logo: {
+          content:{
             populate: '*'
-          },
+          }
         }
       }
     );
