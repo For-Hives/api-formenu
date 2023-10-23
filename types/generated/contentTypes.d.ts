@@ -896,24 +896,6 @@ export interface ApiCompanyCompany extends Schema.CollectionType {
           translate: 'translate';
         };
       }>;
-    logo: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-        translate: {
-          translate: 'translate';
-        };
-      }>;
-    background: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-        translate: {
-          translate: 'translate';
-        };
-      }>;
     country: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
