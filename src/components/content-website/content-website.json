@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_content_website_content_websites",
+  "info": {
+    "displayName": "Content_website",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "metadata_title": {
+      "type": "string"
+    },
+    "metadata_description": {
+      "type": "string"
+    },
+    "home_title": {
+      "type": "string"
+    },
+    "home_subtitle": {
+      "type": "string"
+    },
+    "home_background_images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "home_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
