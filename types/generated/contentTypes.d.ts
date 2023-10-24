@@ -1524,6 +1524,18 @@ export interface ApiMenuMenu extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<'fraunces'>;
+    available_date_start: Attribute.Date &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    available_date_end: Attribute.Date &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &

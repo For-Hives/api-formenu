@@ -135,6 +135,22 @@
         "fraunces"
       ],
       "default": "fraunces"
+    },
+    "available_date_start": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "date"
+    },
+    "available_date_end": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "date"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-10-23T14:41:02.685Z"
+    "x-generation-date": "2023-10-24T12:27:01.465Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2892,6 +2892,14 @@
                           "fraunces"
                         ]
                       },
+                      "available_date_start": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "available_date_end": {
+                        "type": "string",
+                        "format": "date"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -5617,6 +5625,14 @@
                                                     "enum": [
                                                       "fraunces"
                                                     ]
+                                                  },
+                                                  "available_date_start": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                  },
+                                                  "available_date_end": {
+                                                    "type": "string",
+                                                    "format": "date"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -9423,6 +9439,14 @@
                                                     "fraunces"
                                                   ]
                                                 },
+                                                "available_date_start": {
+                                                  "type": "string",
+                                                  "format": "date"
+                                                },
+                                                "available_date_end": {
+                                                  "type": "string",
+                                                  "format": "date"
+                                                },
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -12530,6 +12554,14 @@
                                                     "fraunces"
                                                   ]
                                                 },
+                                                "available_date_start": {
+                                                  "type": "string",
+                                                  "format": "date"
+                                                },
+                                                "available_date_end": {
+                                                  "type": "string",
+                                                  "format": "date"
+                                                },
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -13620,6 +13652,14 @@
               "fraunces"
             ]
           },
+          "available_date_start": {
+            "type": "string",
+            "format": "date"
+          },
+          "available_date_end": {
+            "type": "string",
+            "format": "date"
+          },
           "locale": {
             "type": "string"
           }
@@ -13707,6 +13747,14 @@
                 "enum": [
                   "fraunces"
                 ]
+              },
+              "available_date_start": {
+                "type": "string",
+                "format": "date"
+              },
+              "available_date_end": {
+                "type": "string",
+                "format": "date"
               },
               "locale": {
                 "type": "string"
@@ -15958,6 +16006,14 @@
                                         "fraunces"
                                       ]
                                     },
+                                    "available_date_start": {
+                                      "type": "string",
+                                      "format": "date"
+                                    },
+                                    "available_date_end": {
+                                      "type": "string",
+                                      "format": "date"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -16713,6 +16769,14 @@
             "enum": [
               "fraunces"
             ]
+          },
+          "available_date_start": {
+            "type": "string",
+            "format": "date"
+          },
+          "available_date_end": {
+            "type": "string",
+            "format": "date"
           },
           "createdAt": {
             "type": "string",
