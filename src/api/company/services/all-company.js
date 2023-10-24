@@ -2,7 +2,21 @@
 
 module.exports = {
   allCompany: async () => {
-    let data = await strapi.entityService.findMany(
+    // const removePropsRecursively = (obj) => {
+    //   if (obj && typeof obj === 'object') {
+    //     delete obj.createdBy;
+    //     delete obj.updatedBy;
+    //
+    //     for (let key in obj) {
+    //       if (obj.hasOwnProperty(key)) {
+    //         removePropsRecursively(obj[key]);
+    //       }
+    //     }
+    //   }
+    // }
+    // data.forEach(record => removePropsRecursively(record));
+
+    return await strapi.entityService.findMany(
       "api::company.company",
       {
         fields: [
@@ -20,9 +34,6 @@ module.exports = {
               image: {
                 populate: '*'
               },
-              company: {
-                populate: '*'
-              },
               categories: {
                 fields: [
                   'id',
@@ -34,9 +45,6 @@ module.exports = {
                 sort: {order: 'ASC'},
                 populate: {
                   icon: {
-                    populate: '*'
-                  },
-                  company: {
                     populate: '*'
                   },
                   category: {
@@ -85,9 +93,6 @@ module.exports = {
                       image: {
                         populate: '*'
                       },
-                      company: {
-                        populate: '*'
-                      },
                       type_dish: {
                         fields: [
                           'id',
@@ -106,30 +111,11 @@ module.exports = {
               }
             },
           },
-          content:{
+          content: {
             populate: '*'
           }
         }
       }
     );
-
-    /**
-     * Remove props recursively
-     * @param obj
-     */
-    // const removePropsRecursively = (obj) => {
-    //   if (obj && typeof obj === 'object') {
-    //     delete obj.createdBy;
-    //     delete obj.updatedBy;
-    //
-    //     for (let key in obj) {
-    //       if (obj.hasOwnProperty(key)) {
-    //         removePropsRecursively(obj[key]);
-    //       }
-    //     }
-    //   }
-    // }
-    // data.forEach(record => removePropsRecursively(record));
-    return data;
   },
 };
