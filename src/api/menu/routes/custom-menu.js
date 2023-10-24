@@ -9,7 +9,7 @@ module.exports = {
       config: {
         policies: [],
         middlewares: [
-
+          "api::menu.company-tenancy"
         ],
       },
     },
