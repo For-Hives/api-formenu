@@ -83,12 +83,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "company",
       "pluginOptions": {
         "translate": {
           "translate": "translate"
         }
-      }
+      },
+      "mappedBy": "company"
     },
     "menus": {
       "type": "relation",

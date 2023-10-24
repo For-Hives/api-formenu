@@ -79,6 +79,13 @@
       "relation": "manyToOne",
       "target": "api::company.company",
       "inversedBy": "users"
+    },
+    "profilePicture": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
