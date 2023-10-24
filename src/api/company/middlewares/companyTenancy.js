@@ -34,7 +34,7 @@ module.exports = (config, {strapi}) => {
        * by going forward in the Strapi backend server
        */
 
-      if (connectedUser.company.id !== entry.company.id) {
+      if (connectedUser.company.id !== entry.id) {
         return ctx.unauthorized("This action is unauthorized.You are not from the same company as the entry.");
       } else {
         return next();
