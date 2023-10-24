@@ -25,6 +25,10 @@ module.exports = (config, {strapi}) => {
         entityPath, entryId, {populate: "*"});
 
 
+      if (entry === null) {
+        return ctx.notFound("No entry found for id " + entryId + ".");
+      }
+
       const connectedUser = await strapi.entityService.findOne(
         "plugin::users-permissions.user", user.id, {populate: "company"});
 
