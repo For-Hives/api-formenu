@@ -10663,10 +10663,10 @@ strapi-plugin-translate@1.2.3:
     jsdom "^21.1.1"
     showdown "^2.1.0"
 
-strapi-provider-translate-deepl@1.1.10:
-  version "1.1.10"
-  resolved "https://registry.npmjs.org/strapi-provider-translate-deepl/-/strapi-provider-translate-deepl-1.1.10.tgz"
-  integrity sha512-XitGiiKJ/uG8rX+Zsi8WlAutqnxcAj84u0sKLwjlpfHM09XqH9rgEvpSA6TRmX4iBwa9uQTpEb50BdrDi1KEyA==
+strapi-provider-translate-deepl@1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/strapi-provider-translate-deepl/-/strapi-provider-translate-deepl-1.1.11.tgz#ddd598a4b403ca82df72cc2cb92212da6ee37df8"
+  integrity sha512-64pJSnWB127hPDNG5/B+xNReb4qSmPc3e5nHE3zijS/yUlwMZkJg8G6HJZMNuqbeEfe7XXxTlRqnYEbYWkwdTQ==
   dependencies:
     bottleneck "^2.19.5"
     deepl-node "^1.8.0"
