@@ -2097,26 +2097,10 @@
     plop "2.7.6"
     pluralize "8.0.0"
 
-"@strapi/helper-plugin@4.15.1":
+"@strapi/helper-plugin@4.15.1", "@strapi/helper-plugin@^4.15.0":
   version "4.15.1"
   resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.15.1.tgz#65b4919e70b1c9b55f219778f0934e3c4075fdce"
   integrity sha512-RXhqT1LrsXWSMXBb1xF4lDXjYiLaI8rHck3RDv7iwTseTbijC5+WvbZh13w9pgz/nmbtN3VZ8vWwmhznfXQ2tg==
-  dependencies:
-    axios "1.5.0"
-    date-fns "2.30.0"
-    formik "2.4.0"
-    immer "9.0.19"
-    lodash "4.17.21"
-    qs "6.11.1"
-    react-helmet "6.1.0"
-    react-intl "6.4.1"
-    react-query "3.39.3"
-    react-select "5.7.0"
-
-"@strapi/helper-plugin@^4.1.4":
-  version "4.14.5"
-  resolved "https://registry.npmjs.org/@strapi/helper-plugin/-/helper-plugin-4.14.5.tgz"
-  integrity sha512-zZbvSpH/8g5XTpbcAQnEuLZG9IVrjrXcVVxLQDsvn5mpNBtfOonMF24+TCpgduAYFyj+bf34BDlvzsvMAT1p4A==
   dependencies:
     axios "1.5.0"
     date-fns "2.30.0"
@@ -10668,12 +10652,12 @@ strapi-plugin-populate-deep@3.0.0:
   resolved "https://registry.npmjs.org/strapi-plugin-populate-deep/-/strapi-plugin-populate-deep-3.0.0.tgz"
   integrity sha512-4xpg0JxdaIIeO3wQLIO6Lh5ppbN8kXVl9uopQbs2AhwEf1KwLMSSZjaNoN7shCrxt1cET/u2GTDKG+Nlq54ZKg==
 
-strapi-plugin-translate@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/strapi-plugin-translate/-/strapi-plugin-translate-1.2.2.tgz"
-  integrity sha512-OJk4jWdbFOjX/uVXliEvGThdovO6I5EAT9zVkfa8LXz7c9iQDxv4TV1qU2rr118UZXy2rIv1YelK5KyKDz1Qyg==
+strapi-plugin-translate@1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-translate/-/strapi-plugin-translate-1.2.3.tgz#a506a5a3b71cce08d8c182524a4b0157d71feefb"
+  integrity sha512-hJHwqcWbU+cNbQyskjtqG7wiI8tqzJBFEPJdSNQ/EK3MfQ3jvd9dUfZJ0mR0c/xl+DKOYR1uZz8g/L9wmT9oPQ==
   dependencies:
-    "@strapi/helper-plugin" "^4.1.4"
+    "@strapi/helper-plugin" "^4.15.0"
     axios "^1.2.2"
     bottleneck "^2.19.5"
     jsdom "^21.1.1"
