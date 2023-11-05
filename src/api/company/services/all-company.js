@@ -25,7 +25,10 @@ module.exports = {
           'city',
           'street',
           'postcode',
-          'slug'
+          'slug',
+          'color',
+          'fonts',
+          'fonts_title'
         ],
         populate: {
           menus: {
