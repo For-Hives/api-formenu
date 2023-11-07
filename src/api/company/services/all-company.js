@@ -85,6 +85,11 @@ module.exports = {
                     sort: {order: 'ASC'},
                   },
                   dishes: {
+                    filters: {
+                      is_sidedish: {
+                        $ne: true // This will exclude dishes where is_sidedish is true
+                      }
+                    },
                     populate: {
                       ingredients: {
                         populate: '*'
@@ -106,7 +111,7 @@ module.exports = {
                             populate: '*'
                           }
                         }
-                      }
+                      },
                     }
                   }
                 }
