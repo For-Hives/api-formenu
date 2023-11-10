@@ -1,0 +1,20 @@
+meta {
+  name: editProfile
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:1339/api/users/me
+  body: formUrlEncoded
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{jwt}}
+}
+
+body:multipart-form {
+  identifier: test
+  password: TESTtest
+}
