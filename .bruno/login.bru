@@ -1,0 +1,25 @@
+meta {
+  name: login
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:1339/api/auth/local
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  identifier: test
+  password: TESTtest
+}
+
+body:multipart-form {
+  identifier: test
+  password: TESTtest
+}
+
+vars:post-response {
+  jwt: res.body.jwt
+}
