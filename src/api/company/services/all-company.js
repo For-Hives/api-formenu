@@ -3,9 +3,19 @@ const {removePropsRecursively} = require("../../../utils/remove-props-recursivel
 
 module.exports = {
   allCompany: async () => {
+    const today = new Date();
     let data = await strapi.entityService.findMany(
       "api::company.company",
       {
+        filters: {
+          activated: true,
+          suscribe_date_start: {
+            $lte: today
+          },
+          suscribe_date_end: {
+            $gte: today
+          }
+        },
         fields: [
           'id',
           'name',
@@ -16,7 +26,10 @@ module.exports = {
           'slug',
           'color',
           'fonts',
-          'fonts_title'
+          'fonts_title',
+          'activated',
+          'suscribe_date_start',
+          'suscribe_date_end',
         ],
         populate: {
           menus: {
