@@ -314,6 +314,15 @@
           "translate": "translate"
         }
       }
+    },
+    "is_pescetarian": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false
     }
   }
 }

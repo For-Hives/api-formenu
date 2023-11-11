@@ -1337,6 +1337,13 @@ export interface ApiDishDish extends Schema.CollectionType {
           translate: 'translate';
         };
       }>;
+    is_pescetarian: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::dish.dish', 'oneToOne', 'admin::user'> &

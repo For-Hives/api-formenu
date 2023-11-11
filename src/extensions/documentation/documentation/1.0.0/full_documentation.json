@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-11-11T15:53:32.435Z"
+    "x-generation-date": "2023-11-11T16:03:02.659Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2461,6 +2461,9 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "is_pescetarian": {
+                                                    "type": "boolean"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -5218,6 +5221,9 @@
                                                                                   }
                                                                                 }
                                                                               },
+                                                                              "is_pescetarian": {
+                                                                                "type": "boolean"
+                                                                              },
                                                                               "createdAt": {
                                                                                 "type": "string",
                                                                                 "format": "date-time"
@@ -7758,6 +7764,9 @@
             ],
             "example": "string or id"
           },
+          "is_pescetarian": {
+            "type": "boolean"
+          },
           "locale": {
             "type": "string"
           }
@@ -7929,6 +7938,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "is_pescetarian": {
+                "type": "boolean"
               },
               "locale": {
                 "type": "string"
@@ -10771,6 +10783,9 @@
                             }
                           }
                         },
+                        "is_pescetarian": {
+                          "type": "boolean"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -11073,6 +11088,9 @@
                 }
               }
             }
+          },
+          "is_pescetarian": {
+            "type": "boolean"
           },
           "createdAt": {
             "type": "string",
@@ -14036,6 +14054,9 @@
                             }
                           }
                         },
+                        "is_pescetarian": {
+                          "type": "boolean"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -16197,6 +16218,9 @@
                                                                       }
                                                                     }
                                                                   }
+                                                                },
+                                                                "is_pescetarian": {
+                                                                  "type": "boolean"
                                                                 },
                                                                 "createdAt": {
                                                                   "type": "string",
