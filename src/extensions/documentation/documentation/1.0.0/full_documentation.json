@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-11-11T14:11:01.273Z"
+    "x-generation-date": "2023-11-11T15:49:03.872Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1689,6 +1689,17 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "activated": {
+                                    "type": "boolean"
+                                  },
+                                  "suscribe_date_start": {
+                                    "type": "string",
+                                    "format": "date"
+                                  },
+                                  "suscribe_date_end": {
+                                    "type": "string",
+                                    "format": "date"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -3471,6 +3482,17 @@
           "content": {
             "$ref": "#/components/schemas/ContentWebsiteContentWebsiteComponent"
           },
+          "activated": {
+            "type": "boolean"
+          },
+          "suscribe_date_start": {
+            "type": "string",
+            "format": "date"
+          },
+          "suscribe_date_end": {
+            "type": "string",
+            "format": "date"
+          },
           "locale": {
             "type": "string"
           }
@@ -3551,6 +3573,17 @@
               },
               "content": {
                 "$ref": "#/components/schemas/ContentWebsiteContentWebsiteComponent"
+              },
+              "activated": {
+                "type": "boolean"
+              },
+              "suscribe_date_start": {
+                "type": "string",
+                "format": "date"
+              },
+              "suscribe_date_end": {
+                "type": "string",
+                "format": "date"
               },
               "locale": {
                 "type": "string"
@@ -6153,6 +6186,17 @@
                                         }
                                       }
                                     },
+                                    "activated": {
+                                      "type": "boolean"
+                                    },
+                                    "suscribe_date_start": {
+                                      "type": "string",
+                                      "format": "date"
+                                    },
+                                    "suscribe_date_end": {
+                                      "type": "string",
+                                      "format": "date"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -6441,6 +6485,17 @@
           },
           "content": {
             "$ref": "#/components/schemas/ContentWebsiteContentWebsiteComponent"
+          },
+          "activated": {
+            "type": "boolean"
+          },
+          "suscribe_date_start": {
+            "type": "string",
+            "format": "date"
+          },
+          "suscribe_date_end": {
+            "type": "string",
+            "format": "date"
           },
           "createdAt": {
             "type": "string",
@@ -9479,6 +9534,17 @@
                                                                   }
                                                                 }
                                                               }
+                                                            },
+                                                            "activated": {
+                                                              "type": "boolean"
+                                                            },
+                                                            "suscribe_date_start": {
+                                                              "type": "string",
+                                                              "format": "date"
+                                                            },
+                                                            "suscribe_date_end": {
+                                                              "type": "string",
+                                                              "format": "date"
                                                             },
                                                             "createdAt": {
                                                               "type": "string",
@@ -12733,6 +12799,17 @@
                                                                   }
                                                                 }
                                                               }
+                                                            },
+                                                            "activated": {
+                                                              "type": "boolean"
+                                                            },
+                                                            "suscribe_date_start": {
+                                                              "type": "string",
+                                                              "format": "date"
+                                                            },
+                                                            "suscribe_date_end": {
+                                                              "type": "string",
+                                                              "format": "date"
                                                             },
                                                             "createdAt": {
                                                               "type": "string",
@@ -17088,6 +17165,17 @@
                             }
                           }
                         }
+                      },
+                      "activated": {
+                        "type": "boolean"
+                      },
+                      "suscribe_date_start": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "suscribe_date_end": {
+                        "type": "string",
+                        "format": "date"
                       },
                       "createdAt": {
                         "type": "string",
