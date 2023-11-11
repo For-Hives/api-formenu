@@ -1,8 +1,10 @@
 "use strict";
 
+const { removePropsRecursively } = require("../../../utils/remove-props-recursively");
+
 module.exports = {
   menuDeep: async (id) => {
-    return await strapi.entityService.findOne(
+    let data = await strapi.entityService.findOne(
       "api::menu.menu",
       id,
       {
@@ -89,5 +91,7 @@ module.exports = {
         },
       }
     );
+    removePropsRecursively(data);
+    return data;
   },
 };

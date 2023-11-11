@@ -1,20 +1,8 @@
 "use strict";
+const {removePropsRecursively} = require("../../../utils/remove-props-recursively");
 
 module.exports = {
   allCompany: async () => {
-    const removePropsRecursively = (obj) => {
-      if (obj && typeof obj === 'object') {
-        delete obj.createdBy;
-        delete obj.updatedBy;
-
-        for (let key in obj) {
-          if (obj.hasOwnProperty(key)) {
-            removePropsRecursively(obj[key]);
-          }
-        }
-      }
-    }
-
     let data = await strapi.entityService.findMany(
       "api::company.company",
       {
