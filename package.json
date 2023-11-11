@@ -30,10 +30,10 @@
   },
   "dependencies": {
     "@retikolo/drag-drop-content-types": "1.3.10",
-    "@strapi/plugin-documentation": "4.14.6",
-    "@strapi/plugin-i18n": "4.14.6",
-    "@strapi/plugin-users-permissions": "4.14.6",
-    "@strapi/strapi": "4.14.6",
+    "@strapi/plugin-documentation": "4.15.4",
+    "@strapi/plugin-i18n": "4.15.4",
+    "@strapi/plugin-users-permissions": "4.15.4",
+    "@strapi/strapi": "4.15.4",
     "lodash": "4.17.21",
     "minio-for-strapi-v4": "1.0.7",
     "pg": "8.11.3",
@@ -47,9 +47,6 @@
   },
   "strapi": {
     "uuid": "02bd7523-b04d-4411-9976-2911345e0280"
-  },
-  "engines": {
-    "node": "18.x"
   },
   "license": "MIT",
   "jest": {
