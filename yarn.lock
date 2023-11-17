@@ -1757,10 +1757,10 @@
   resolved "https://registry.yarnpkg.com/@react-dnd/shallowequal/-/shallowequal-3.0.1.tgz#8056fe046a8d10a275e321ec0557ae652d7a4d06"
   integrity sha512-XjDVbs3ZU16CO1h5Q3Ew2RPJqmZBDE/EVf1LYp6ePEffs3V/MX9ZbL5bJr8qiK5SbGmUMuDoaFgyKacYz8prRA==
 
-"@retikolo/drag-drop-content-types@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@retikolo/drag-drop-content-types/-/drag-drop-content-types-1.4.0.tgz#c26992cd76c5ad555b65b22facda15bf15ce0465"
-  integrity sha512-NSyd7MYI4cUOjPAh1fYr99OuqnYGHd5q9OBSBojYQb8Q9zVPBIZTdfWnQy2ai0f7JGXWO97vLolntLUqJF1N1Q==
+"@retikolo/drag-drop-content-types@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@retikolo/drag-drop-content-types/-/drag-drop-content-types-1.4.2.tgz#ee3a66294a0e859e7acd8d2f5b1e40e15790aef2"
+  integrity sha512-ht2VgRm9kZjk3Rzu/VM2AL9CAID/LPOedD26ligYdiqdz3F2ZRCannacP8KUnznIkU+JFbiej7M3N8Kq6PDoQg==
   dependencies:
     array-move "^4.0.0"
     react-sortable-hoc "^2.0.0"
