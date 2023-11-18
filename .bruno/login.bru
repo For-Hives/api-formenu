@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: http://localhost:1339/api/auth/local
+  url: {{process.env.API_URL}}/api/auth/local
   body: formUrlEncoded
   auth: none
 }
