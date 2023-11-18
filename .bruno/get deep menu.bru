@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: {{process.env.API_URL}}/api/menu-deep/1
+  url: {{process.env.API_URL}}/api/menu-deep/6
   body: none
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{jwt}}
 }

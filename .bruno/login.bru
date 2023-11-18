@@ -11,8 +11,8 @@ post {
 }
 
 body:form-urlencoded {
-  identifier: test
-  password: TESTtest
+  identifier: {{process.env.API_IDENTIFIER}}
+  password: {{process.env.API_PASSWORD}}
 }
 
 body:multipart-form {
