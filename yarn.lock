@@ -11112,10 +11112,10 @@ strapi-plugin-translate@1.2.4:
     jsdom "^21.1.1"
     showdown "^2.1.0"
 
-strapi-provider-translate-deepl@1.1.11:
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/strapi-provider-translate-deepl/-/strapi-provider-translate-deepl-1.1.11.tgz#ddd598a4b403ca82df72cc2cb92212da6ee37df8"
-  integrity sha512-64pJSnWB127hPDNG5/B+xNReb4qSmPc3e5nHE3zijS/yUlwMZkJg8G6HJZMNuqbeEfe7XXxTlRqnYEbYWkwdTQ==
+strapi-provider-translate-deepl@1.1.12:
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/strapi-provider-translate-deepl/-/strapi-provider-translate-deepl-1.1.12.tgz#5079890b8b9d0ddbd693168285e89a04b5bc4a98"
+  integrity sha512-OsYlK9Fd/u/jJa9VZbjW+OkaYKe5AdZQT814rgoc5Vry8YdLKyPMO4pwKxa/BHgqmIjmyTGpZAfM8FKDpypqug==
   dependencies:
     bottleneck "^2.19.5"
     deepl-node "^1.8.0"

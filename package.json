@@ -40,7 +40,7 @@
     "strapi-plugin-import-export-entries": "1.21.1",
     "strapi-plugin-populate-deep": "3.0.1",
     "strapi-plugin-translate": "1.2.4",
-    "strapi-provider-translate-deepl": "1.1.11"
+    "strapi-provider-translate-deepl": "1.1.12"
   },
   "author": {
     "name": "Andy Cinquin"
