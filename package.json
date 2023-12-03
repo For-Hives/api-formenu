@@ -24,7 +24,7 @@
     "better-sqlite3": "8.7.0",
     "husky": "8.0.3",
     "jest": "29.7.0",
-    "lint-staged": "14.0.1",
+    "lint-staged": "15.2.0",
     "sqlite3": "5.1.6",
     "supertest": "6.3.3"
   },
