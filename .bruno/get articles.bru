@@ -1,0 +1,15 @@
+meta {
+  name: get articles
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{process.env.API_URL}}/api/landing-blog-articles
+  body: none
+  auth: none
+}
+
+auth:bearer {
+  token: {{jwt}}
+}
