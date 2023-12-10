@@ -1448,6 +1448,89 @@ export interface ApiIngredientIngredient extends Schema.CollectionType {
   };
 }
 
+export interface ApiLandingBlogArticleLandingBlogArticle
+  extends Schema.CollectionType {
+  collectionName: 'landing_blog_articles';
+  info: {
+    singularName: 'landing-blog-article';
+    pluralName: 'landing-blog-articles';
+    displayName: 'Landing-Blog-Article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
+    date: Attribute.Date &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
+    excerpt: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::landing-blog-article.landing-blog-article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::landing-blog-article.landing-blog-article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::landing-blog-article.landing-blog-article',
+      'oneToMany',
+      'api::landing-blog-article.landing-blog-article'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiMenuMenu extends Schema.CollectionType {
   collectionName: 'menus';
   info: {
@@ -1632,6 +1715,7 @@ declare module '@strapi/types' {
       'api::content-website.content-website': ApiContentWebsiteContentWebsite;
       'api::dish.dish': ApiDishDish;
       'api::ingredient.ingredient': ApiIngredientIngredient;
+      'api::landing-blog-article.landing-blog-article': ApiLandingBlogArticleLandingBlogArticle;
       'api::menu.menu': ApiMenuMenu;
       'api::type-dish.type-dish': ApiTypeDishTypeDish;
     }
