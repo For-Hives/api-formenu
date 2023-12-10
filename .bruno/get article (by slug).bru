@@ -1,0 +1,19 @@
+meta {
+  name: get article (by slug)
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{process.env.API_URL}}/api/landing-blog-articles?filters[slug][$eq]=formenu-presentation
+  body: none
+  auth: none
+}
+
+query {
+  filters[slug][$eq]: formenu-presentation
+}
+
+auth:bearer {
+  token: {{jwt}}
+}
