@@ -6,7 +6,6 @@ module.exports = {
         const userPopulated = await strapi.entityService.findOne('plugin::users-permissions.user', user.id, {
             populate: { company: true },
         });
-        console.log("(services) findMyIngredients - userPopulated", userPopulated)
         if (!userPopulated || !userPopulated.company) {
             throw new Error("User or user's company is undefined");
         }
@@ -22,7 +21,6 @@ module.exports = {
                 populate: { /* champs à peupler si nécessaire */ },
             }
         );
-        console.log('(services) findMyIngredients - ingredients', ingredients);
 
         return ingredients;
     },
