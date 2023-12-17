@@ -1,15 +1,21 @@
+"use strict";
+
 module.exports = {
-    routes: [
-        {
-            method: "GET",
-            path: "/my-ingredients",
-            handler: "custom-ingredient.findMyIngredients",
-            config: {
-                policies: [],
-                middlewares: [
-                    "api::ingredient.company-tenancy"
-                ],
-            },
-        },
-    ],
+    findMyIngredients: async (user) => {
+        // Récupérer l'ID de la société associée à l'utilisateur
+        const companyId = user.company.id;
+
+        // Utiliser Strapi pour requêter la base de données
+        const ingredients = await strapi.entityService.findMany(
+            "api::ingredient.ingredient",
+            {
+                where: {
+                    company: companyId,
+                },
+                populate: { /* champs à peupler si nécessaire */ },
+            }
+        );
+
+        return ingredients;
+    },
 };
