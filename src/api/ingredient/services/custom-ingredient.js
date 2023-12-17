@@ -3,6 +3,7 @@
 module.exports = {
     findMyIngredients: async (user) => {
         // Récupérer l'ID de la société associée à l'utilisateur
+        console.log("(services) findMyIngredients - user", user)
         const companyId = user.company.id;
 
         // Utiliser Strapi pour requêter la base de données
