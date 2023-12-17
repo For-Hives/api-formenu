@@ -9,6 +9,7 @@ const entityPath = "api::ingredient.ingredient"
 module.exports = (config, {strapi}) => {
   // Add your own logic here.
   return async (ctx, next) => {
+    console.log("middleware companyTenancy ingredients")
     const user = ctx.state.user;
     const entryId = ctx.params.id ? ctx.params.id : undefined;
     let entry = {};
@@ -43,6 +44,10 @@ module.exports = (config, {strapi}) => {
       } else {
         return next();
       }
+    } else {
+      const connectedUser = await strapi.entityService.findOne(
+          "plugin::users-permissions.user", user.id, {populate: "company"});
+      return next();
     }
   };
 };

@@ -1,5 +1,8 @@
+"use strict";
+
 module.exports = {
     async findMyIngredients(ctx, next) {
+        console.log('(controller) findMyIngredients - ctx.state.user', ctx.state.user);
         try {
             const user = ctx.state.user; // ou ctx.request.user, selon votre configuration d'authentification
 
