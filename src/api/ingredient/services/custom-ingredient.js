@@ -15,6 +15,7 @@ module.exports = {
                 populate: { /* champs à peupler si nécessaire */ },
             }
         );
+        console.log('(services) findMyIngredients - ingredients', ingredients);
 
         return ingredients;
     },

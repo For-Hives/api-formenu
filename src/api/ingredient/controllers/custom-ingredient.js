@@ -11,6 +11,8 @@ module.exports = {
                 .service("api::ingredient.custom-ingredient")
                 .findMyIngredients(user);
 
+            console.log('(controller) findMyIngredients - ingredients', data);
+
             ctx.body = data;
         } catch (err) {
             console.log(err);
