@@ -8,7 +8,7 @@ module.exports = {
             }
 
             const data = await strapi
-                .service("api::ingredient.custom-ingredients")
+                .service("api::ingredient.custom-ingredient")
                 .findMyIngredients(user);
 
             ctx.body = data;
