@@ -47,7 +47,7 @@
     "uuid": "02bd7523-b04d-4411-9976-2911345e0280"
   },
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   },
   "license": "MIT",
   "jest": {
