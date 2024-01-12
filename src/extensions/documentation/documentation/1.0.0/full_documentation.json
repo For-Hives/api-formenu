@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-12-17T17:14:27.115Z"
+    "x-generation-date": "2024-01-12T10:09:57.094Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -25,7 +25,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:1337/api",
+      "url": "http://localhost:1339/api",
       "description": "Development server"
     }
   ],
@@ -3380,7 +3380,7 @@
               "data": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/CategoryListResponseDataItemLocalized"
                 }
               }
             }
@@ -6551,7 +6551,7 @@
               "data": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Company"
+                  "$ref": "#/components/schemas/CompanyListResponseDataItemLocalized"
                 }
               }
             }
@@ -7568,7 +7568,7 @@
               "data": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/ContentWebsite"
+                  "$ref": "#/components/schemas/ContentWebsiteListResponseDataItemLocalized"
                 }
               }
             }
@@ -11140,7 +11140,7 @@
               "data": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Dish"
+                  "$ref": "#/components/schemas/DishListResponseDataItemLocalized"
                 }
               }
             }
@@ -14194,7 +14194,7 @@
               "data": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Ingredient"
+                  "$ref": "#/components/schemas/IngredientListResponseDataItemLocalized"
                 }
               }
             }
@@ -14722,7 +14722,7 @@
               "data": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/LandingBlogArticle"
+                  "$ref": "#/components/schemas/LandingBlogArticleListResponseDataItemLocalized"
                 }
               }
             }
@@ -18161,7 +18161,7 @@
               "data": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Menu"
+                  "$ref": "#/components/schemas/MenuListResponseDataItemLocalized"
                 }
               }
             }
