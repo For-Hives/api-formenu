@@ -15,7 +15,7 @@ module.exports = {
       ctx.body = data;
     } catch (err) {
       console.log(err);
-      ctx.badRequest("updating Makeup Artist error", {
+      ctx.badRequest("updating Profile error", {
         moreDetails: err.message,
       });
     }
