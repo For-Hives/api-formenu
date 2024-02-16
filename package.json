@@ -42,7 +42,7 @@
     "strapi-plugin-populate-deep": "3.0.1",
     "strapi-plugin-translate": "1.2.4",
     "strapi-provider-translate-deepl": "1.1.12",
-    "styled-components": "5.2.1"
+    "styled-components": "5.3.11"
   },
   "author": {
     "name": "Andy Cinquin & Breval LE FLOCH"
