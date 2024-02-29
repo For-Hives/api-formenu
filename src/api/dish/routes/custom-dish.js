@@ -4,8 +4,8 @@ module.exports = {
     routes: [
         {
             method: "GET",
-            path: "/my-dishes",
-            handler: "custom-dish.findMyDishes",
+            path: "/my-dish",
+            handler: "custom-dish.findMyDish",
             config: {
                 policies: [],
                 middlewares: [

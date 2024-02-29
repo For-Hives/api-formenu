@@ -1,11 +1,11 @@
 meta {
-  name: get my ingredients (from my company)
+  name: get my dishes (from my company)
   type: http
-  seq: 6
+  seq: 9
 }
 
 get {
-  url: {{process.env.API_URL}}/api/my-ingredients
+  url: {{process.env.API_URL}}/api/my-dishes
   body: none
   auth: bearer
 }

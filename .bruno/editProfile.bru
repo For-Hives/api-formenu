@@ -11,7 +11,7 @@ post {
 }
 
 auth:bearer {
-  token: {{jwt}}
+  token: {{process.env.JWT_SECRET}}
 }
 
 body:multipart-form {
