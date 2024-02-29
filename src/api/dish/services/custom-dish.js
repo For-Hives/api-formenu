@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-    findMyIngredients: async (user) => {
+    findMyDishes: async (user) => {
         // Récupérer l'ID de la société associée à l'utilisateur
         const userPopulated = await strapi.entityService.findOne('plugin::users-permissions.user', user.id, {
             populate: { company: true },

@@ -9,13 +9,11 @@ module.exports = {
                 return ctx.badRequest("No authenticated user found");
             }
 
-            const data = await strapi
+            ctx.body = await strapi
                 .service("api::dish.custom-dish")
                 .findMyDishes(user);
-
-            ctx.body = data;
         } catch (err) {
-            ctx.badRequest("Error in fetching ingredients by company", {
+            ctx.badRequest("Error in fetching dishes by company", {
                 moreDetails: err.message,
             });
         }
