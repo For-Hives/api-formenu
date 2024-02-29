@@ -12,8 +12,8 @@ module.exports = {
         const companyId = userPopulated.company.id;
 
         // Utiliser Strapi pour requêter la base de données
-        const ingredients = await strapi.entityService.findMany(
-            "api::ingredient.ingredient",
+        const dishes = await strapi.entityService.findMany(
+            "api::dish.dish",
             {
                 where: {
                     company: companyId,
@@ -22,6 +22,6 @@ module.exports = {
             }
         );
 
-        return ingredients;
+        return dishes;
     },
 };

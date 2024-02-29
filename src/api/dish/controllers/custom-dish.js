@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-    async findMyIngredients(ctx, next) {
+    async findMyDishes(ctx, next) {
         try {
             const user = ctx.state.user; // ou ctx.request.user, selon votre configuration d'authentification
 
@@ -10,8 +10,8 @@ module.exports = {
             }
 
             const data = await strapi
-                .service("api::ingredient.custom-ingredient")
-                .findMyIngredients(user);
+                .service("api::dish.custom-dish")
+                .findMyDishes(user);
 
             ctx.body = data;
         } catch (err) {
