@@ -1,0 +1,59 @@
+meta {
+  name: put ingredients
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{process.env.API_URL}}/api/ingredients
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA4NjkzNTU1LCJleHAiOjE3MTEyODU1NTV9.sPp_B0d5J6BIMgFfzPf0ObaYsQvSlRAhbr5gcEL5yns
+}
+
+body:json {
+  {
+    "data": {
+      "name": "nouvel ingredientzzzz",
+      "activated": false,
+      "available_date_start": null,
+      "available_date_end": null,
+      "company": {
+        "id": 1,
+        "name": "Les pieds dans l'eau",
+        "description": "Restaurant au bord du Lac Léman",
+        "country": "France",
+        "postcode": 74200,
+        "street": "Plage De Corzent, 14 Rue de la Plage",
+        "city": "Anthy-sur-Léman",
+        "createdAt": "2023-09-10T15:24:49.616Z",
+        "updatedAt": "2023-11-11T17:57:31.593Z",
+        "locale": "fr",
+        "color": "blue",
+        "fonts": "lato",
+        "fonts_title": "fraunces",
+        "slug": "les-pieds-dans-l-eau",
+        "activated": true,
+        "suscribe_date_start": "2023-11-01",
+        "suscribe_date_end": "2024-11-01"
+      }
+    }
+  }
+}
+
+body:form-urlencoded {
+  identifier: {{process.env.API_IDENTIFIER}}
+  password: {{process.env.API_PASSWORD}}
+}
+
+body:multipart-form {
+  identifier: test
+  password: TESTtest
+}
+
+vars:post-response {
+  jwt: res.body.jwt
+}
