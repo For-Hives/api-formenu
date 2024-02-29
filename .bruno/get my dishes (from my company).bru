@@ -1,0 +1,15 @@
+meta {
+  name: get my dishes (from my company)
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{process.env.API_URL}}/api/my-ingredients
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{jwt}}
+}
