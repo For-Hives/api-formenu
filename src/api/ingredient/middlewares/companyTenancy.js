@@ -4,7 +4,6 @@ const entityPath = "api::ingredient.ingredient"
 
 module.exports = (config, {strapi}) => {
   return async (ctx, next) => {
-    console.log("middleware companyTenancy ingredients")
     const user = ctx.state.user;
     const entryId = ctx.params.id;
 
