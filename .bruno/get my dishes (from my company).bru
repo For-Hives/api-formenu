@@ -5,11 +5,11 @@ meta {
 }
 
 get {
-  url: {{process.env.API_URL}}/api/my-ingredients
+  url: {{process.env.API_URL}}/api/my-dishes
   body: none
   auth: bearer
 }
 
 auth:bearer {
-  token: {{jwt}}
+  token: {{process.env.JWT_SECRET}}
 }

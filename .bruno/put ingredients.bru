@@ -11,7 +11,7 @@ post {
 }
 
 auth:bearer {
-  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA4NjkzNTU1LCJleHAiOjE3MTEyODU1NTV9.sPp_B0d5J6BIMgFfzPf0ObaYsQvSlRAhbr5gcEL5yns
+  token: {{process.env.JWT_SECRET}}
 }
 
 body:json {
