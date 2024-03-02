@@ -19,7 +19,7 @@ module.exports = {
                     company: companyId,
                 },
                 populate: {
-                    ingredients: true,
+                    category: true, ingredients: true, image: true, type_dish: {fields: ['id', 'name', 'color'], populate: {icon: true}}
                 },
             }
         );
