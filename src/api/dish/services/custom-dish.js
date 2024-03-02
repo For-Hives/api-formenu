@@ -18,7 +18,9 @@ module.exports = {
                 where: {
                     company: companyId,
                 },
-                populate: { /* champs à peupler si nécessaire */ },
+                populate: {
+                    ingredients: true,
+                },
             }
         );
 
