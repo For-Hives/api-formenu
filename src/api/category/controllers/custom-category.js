@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-    async findMyIngredients(ctx, next) {
+    async findMyCategories(ctx, next) {
         try {
             const user = ctx.state.user; // ou ctx.request.user, selon votre configuration d'authentification
 
@@ -10,12 +10,12 @@ module.exports = {
             }
 
             const data = await strapi
-                .service("api::ingredient.custom-ingredient")
-                .findMyIngredients(user);
+                .service("api::category.custom-category")
+                .findMyCategories(user);
 
             ctx.body = data;
         } catch (err) {
-            ctx.badRequest("Error in fetching ingredients by company", {
+            ctx.badRequest("Error in fetching categories by company", {
                 moreDetails: err.message,
             });
         }
