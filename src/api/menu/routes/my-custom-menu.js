@@ -4,12 +4,12 @@ module.exports = {
     routes: [
         {
             method: "GET",
-            path: "/my-categories",
-            handler: "custom-category.findMyCategories",
+            path: "/my-menus",
+            handler: "my-custom-menu.findMyMenus",
             config: {
                 policies: [],
                 middlewares: [
-                    "api::category.company-tenancy"
+                    "api::menu.company-tenancy"
                 ],
             },
         },

@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-    findMyCategories: async (user) => {
+    findMyMenus: async (user) => {
         // Récupérer l'ID de la société associée à l'utilisateur
         const userPopulated = await strapi.entityService.findOne('plugin::users-permissions.user', user.id, {
             populate: { company: true },
@@ -12,18 +12,18 @@ module.exports = {
         const companyId = userPopulated.company.id;
 
         // Utiliser Strapi pour requêter la base de données
-        const categories = await strapi.entityService.findMany(
-            "api::category.category",
+        const menus = await strapi.entityService.findMany(
+            "api::menu.menu",
             {
                 where: {
                     company: companyId,
                 },
                 populate: {
-                    category: true, categories: true, icon: true, dishes: true, menu: true
+                    // populate there
                 },
             }
         );
 
-        return categories;
+        return menus;
     },
 };
