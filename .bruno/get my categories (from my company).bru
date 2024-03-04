@@ -1,0 +1,15 @@
+meta {
+  name: get my categories (from my company)
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{process.env.API_URL}}/api/my-dishes
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{process.env.JWT_SECRET}}
+}
