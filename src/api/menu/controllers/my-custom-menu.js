@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-    async findMyCategories(ctx, next) {
+    async findMyMenus(ctx, next) {
         try {
             const user = ctx.state.user; // ou ctx.request.user, selon votre configuration d'authentification
 
@@ -10,12 +10,12 @@ module.exports = {
             }
 
             const data = await strapi
-                .service("api::category.custom-category")
-                .findMyCategories(user);
+                .service("api::menu.my-custom-menu")
+                .findMyMenus(user);
 
             ctx.body = data;
         } catch (err) {
-            ctx.badRequest("Error in fetching categories by company", {
+            ctx.badRequest("Error in fetching menus by company", {
                 moreDetails: err.message,
             });
         }
