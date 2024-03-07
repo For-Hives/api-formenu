@@ -1,0 +1,26 @@
+meta {
+  name: refresh jwt
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{process.env.API_URL}}/api/token/refresh
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "refreshToken": ""
+  }
+}
+
+body:multipart-form {
+  identifier: test
+  password: TESTtest
+}
+
+vars:post-response {
+  jwt: res.body.jwt
+}

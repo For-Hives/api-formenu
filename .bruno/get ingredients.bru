@@ -1,13 +1,17 @@
 meta {
-  name: login
+  name: get ingredients
   type: http
-  seq: 2
+  seq: 13
 }
 
-post {
-  url: {{process.env.API_URL}}/api/auth/local
-  body: formUrlEncoded
-  auth: none
+get {
+  url: {{process.env.API_URL}}/api/ingredients
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{process.env.JWT_SECRET}}
 }
 
 body:form-urlencoded {
