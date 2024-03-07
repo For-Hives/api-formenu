@@ -36,6 +36,6 @@ module.exports = ({env}) => ({
     }
   },
   jwt: {
-    expiresIn: '3m',
+    expiresIn: '1m',
   },
 });
