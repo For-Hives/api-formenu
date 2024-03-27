@@ -29,10 +29,10 @@
     "supertest": "6.3.4"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "4.17.1",
-    "@strapi/plugin-i18n": "4.17.1",
-    "@strapi/plugin-users-permissions": "4.17.1",
-    "@strapi/strapi": "4.17.1",
+    "@strapi/plugin-documentation": "4.21.1",
+    "@strapi/plugin-i18n": "4.21.1",
+    "@strapi/plugin-users-permissions": "4.21.1",
+    "@strapi/strapi": "4.21.1",
     "lodash": "4.17.21",
     "minio-for-strapi-v4": "1.0.7",
     "pg": "8.11.3",
