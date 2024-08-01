@@ -38,7 +38,7 @@
     "pg": "8.12.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-router-dom": "6.25.1",
+    "react-router-dom": "6.26.0",
     "strapi-plugin-populate-deep": "3.0.1",
     "strapi-plugin-translate": "1.2.4",
     "strapi-provider-translate-deepl": "1.1.12",
