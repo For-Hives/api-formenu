@@ -3308,7 +3308,7 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-axios@1.6.0, "axios@>=0.21.2 <1.2.0 || >=1.2.2":
+axios@1.6.0:
   version "1.6.0"
   resolved "https://registry.npmjs.org/axios/-/axios-1.6.0.tgz"
   integrity sha512-EZ1DYihju9pwVB+jg67ogm+Tmqc6JmhamRN6I4Zt8DfZu5lbcQGw3ozH9lFejSJgs/ibaef3A9PMXPLeefFGJg==
@@ -3317,7 +3317,7 @@ axios@1.6.0, "axios@>=0.21.2 <1.2.0 || >=1.2.2":
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
 
-axios@^1.6.7:
+axios@^1.6.7, axios@^1.7.4:
   version "1.7.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.4.tgz#4c8ded1b43683c8dd362973c393f3ede24052aa2"
   integrity sha512-DukmaFRnY6AzAALSH4J2M3k6PkaC+MfaAGdEERRWcC9q3/TWQwLpHR8ZRLKTdQ3aBDL64EdluRDjJqKw+BPZEw==
@@ -4579,13 +4579,13 @@ deep-extend@^0.6.0:
   resolved "https://registry.npmjs.org/deep-extend/-/deep-extend-0.6.0.tgz"
   integrity sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==
 
-deepl-node@^1.8.0:
-  version "1.11.0"
-  resolved "https://registry.npmjs.org/deepl-node/-/deepl-node-1.11.0.tgz"
-  integrity sha512-PLz38WIfWzVScbz4S+32vI9yCUAXy3cpkKSMPC+IDpvrwKrQ2TSzwkoBh7CJOkPjaX8ZMvjwAc+C5eTCPamQTg==
+deepl-node@^1.11.1:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/deepl-node/-/deepl-node-1.13.1.tgz#00efe900c64b688f2d5f62ae8563fcbeacb7c18e"
+  integrity sha512-J1Y4+FYNxxTyqKiTM83Vub8Fm6/z6ZlV7yFKJ59Oi5dWXjdILQWd8UR4eiNF+pJtTBH5ObRv1cdUrRyUuN5VDg==
   dependencies:
     "@types/node" ">=12.0"
-    axios ">=0.21.2 <1.2.0 || >=1.2.2"
+    axios "^1.7.4"
     form-data "^3.0.0"
     loglevel ">=1.6.2"
 
@@ -10690,13 +10690,13 @@ strapi-plugin-translate@1.2.5:
     jsdom "^24.0.0"
     showdown "^2.1.0"
 
-strapi-provider-translate-deepl@1.1.12:
-  version "1.1.12"
-  resolved "https://registry.npmjs.org/strapi-provider-translate-deepl/-/strapi-provider-translate-deepl-1.1.12.tgz"
-  integrity sha512-OsYlK9Fd/u/jJa9VZbjW+OkaYKe5AdZQT814rgoc5Vry8YdLKyPMO4pwKxa/BHgqmIjmyTGpZAfM8FKDpypqug==
+strapi-provider-translate-deepl@1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/strapi-provider-translate-deepl/-/strapi-provider-translate-deepl-1.1.13.tgz#44c0d0f5dc96c05eaba714840d3aa0cb664cf958"
+  integrity sha512-jiM9c3O2VEHtt//gpLA8UzrPHk94qXxvEB/4HGWWko3VI+0G3LMYC2Oi9QYBIY1aBfV6iRj/VwCXrPhoVLL07g==
   dependencies:
     bottleneck "^2.19.5"
-    deepl-node "^1.8.0"
+    deepl-node "^1.11.1"
 
 stream-chain@2.2.5, stream-chain@^2.2.5:
   version "2.2.5"
