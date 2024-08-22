@@ -41,7 +41,7 @@
     "react-router-dom": "6.26.1",
     "strapi-plugin-populate-deep": "3.0.1",
     "strapi-plugin-translate": "1.2.5",
-    "strapi-provider-translate-deepl": "1.1.12",
+    "strapi-provider-translate-deepl": "1.1.13",
     "styled-components": "6.1.12"
   },
   "author": {
