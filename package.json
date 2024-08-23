@@ -29,10 +29,10 @@
     "supertest": "7.0.0"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "4.17.1",
-    "@strapi/plugin-i18n": "4.17.1",
-    "@strapi/plugin-users-permissions": "4.17.1",
-    "@strapi/strapi": "4.17.1",
+    "@strapi/plugin-documentation": "4.25.8",
+    "@strapi/plugin-i18n": "4.25.8",
+    "@strapi/plugin-users-permissions": "4.25.8",
+    "@strapi/strapi": "4.25.8",
     "lodash": "4.17.21",
     "minio-for-strapi-v4": "1.0.7",
     "pg": "8.12.0",
@@ -42,7 +42,7 @@
     "strapi-plugin-populate-deep": "3.0.1",
     "strapi-plugin-translate": "1.2.5",
     "strapi-provider-translate-deepl": "1.1.13",
-    "styled-components": "6.1.12"
+    "styled-components": "5.2.1"
   },
   "author": {
     "name": "Andy Cinquin & Breval LE FLOCH"
