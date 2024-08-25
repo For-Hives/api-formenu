@@ -1,17 +1,26 @@
 module.exports = ({ env }) => {
-  var ssl = env("S3_SSL", "false") === "true" ? "https://" : "http://";
-  const s3url = new URL(ssl + env("S3_ENDPOINT"));
   return [
     "strapi::errors",
     {
       name: "strapi::security",
       config: {
+        cors: {},
         contentSecurityPolicy: {
           useDefaults: true,
           directives: {
             "connect-src": ["'self'", "https:"],
-            "img-src": ["'self'", "data:", "blob:", s3url.host],
-            "media-src": ["'self'", "data:", "blob:", s3url.host],
+            "img-src": [
+              "'self'",
+              "data:",
+              "blob:",
+              env("CF_PUBLIC_ACCESS_URL")?.replace(/^https?:\/\//, ""),
+            ],
+            "media-src": [
+              "'self'",
+              "data:",
+              "blob:",
+              env("CF_PUBLIC_ACCESS_URL")?.replace(/^https?:\/\//, ""),
+            ],
             upgradeInsecureRequests: null,
           },
         },
