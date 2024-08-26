@@ -42,7 +42,7 @@
     "strapi-provider-translate-deepl": "1.1.13",
     "strapi-provider-cloudflare-r2": "0.2.5",
     "react-router-dom": "5.3.4",
-    "styled-components": "5.3.11"
+    "styled-components": "6.1.12"
   },
   "author": {
     "name": "Andy Cinquin & Breval LE FLOCH"
