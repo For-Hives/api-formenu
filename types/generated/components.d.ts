@@ -11,8 +11,11 @@ export interface ContentWebsiteContentWebsite extends Schema.Component {
     metadata_description: Attribute.String;
     home_title: Attribute.String;
     home_subtitle: Attribute.String;
-    home_background_images: Attribute.Media;
-    home_image: Attribute.Media;
+    home_background_images: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    home_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
