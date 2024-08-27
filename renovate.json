@@ -11,7 +11,8 @@
     },
     {
       "matchPackageNames": ["react-router-dom", "styled-components"],
-      "allowedVersions": "current"
+      "allowedVersions": "*",
+      "enabled": false
     }
   ]
 }
