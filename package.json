@@ -40,7 +40,7 @@
     "strapi-plugin-populate-deep": "3.0.1",
     "strapi-plugin-translate": "1.2.5",
     "strapi-provider-translate-deepl": "1.1.13",
-    "strapi-provider-cloudflare-r2": "0.2.5",
+    "strapi-provider-cloudflare-r2": "0.3.0",
     "react-router-dom": "5.3.4",
     "styled-components": "5.3.11"
   },
