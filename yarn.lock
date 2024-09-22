@@ -11152,10 +11152,10 @@ strapi-plugin-translate@1.2.5:
     jsdom "^24.0.0"
     showdown "^2.1.0"
 
-strapi-provider-cloudflare-r2@0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/strapi-provider-cloudflare-r2/-/strapi-provider-cloudflare-r2-0.2.5.tgz#ed77d63730507a6737aaa1fb02f0917ffab12410"
-  integrity sha512-y42ySErRpcsW1JPNP443/wTrxE09BoX4dPv+DVU8E5M6dKgIHgdiz1k5V1nPMRpDAEW1IyKR/IQ7GyGK4WFZUQ==
+strapi-provider-cloudflare-r2@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/strapi-provider-cloudflare-r2/-/strapi-provider-cloudflare-r2-0.3.0.tgz#967026dfc6373700afbcce078ae22ff9df5f1bf0"
+  integrity sha512-3azodyrbI+8F1GArr+D7BKGr0CHKbHphBoeezGKjUdUCgKfcQE+Mc+BZyuWC4SuIisBM3Sy7lF0rt79wyK/Lxg==
   dependencies:
     aws-sdk "2.1287.0"
     lodash "4.17.21"
