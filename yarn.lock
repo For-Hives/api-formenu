@@ -4921,10 +4921,10 @@ deep-extend@^0.6.0:
   resolved "https://registry.npmjs.org/deep-extend/-/deep-extend-0.6.0.tgz"
   integrity sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==
 
-deepl-node@^1.11.1:
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/deepl-node/-/deepl-node-1.13.1.tgz#00efe900c64b688f2d5f62ae8563fcbeacb7c18e"
-  integrity sha512-J1Y4+FYNxxTyqKiTM83Vub8Fm6/z6ZlV7yFKJ59Oi5dWXjdILQWd8UR4eiNF+pJtTBH5ObRv1cdUrRyUuN5VDg==
+deepl-node@^1.13.1:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/deepl-node/-/deepl-node-1.15.0.tgz#8af2f11fdbbdac3f18134ab583bd19e98799e8f5"
+  integrity sha512-GDHB9YKXeeL/WOR9OqjORC9drt3ECpo72lJsY8T1lgKMwt3G5cvQ6G2bC315/4o8Q9JseU32w2iaJ7nXkr6cpg==
   dependencies:
     "@types/node" ">=12.0"
     axios "^1.7.4"
@@ -11197,13 +11197,13 @@ strapi-provider-cloudflare-r2@0.3.0:
     aws-sdk "2.1287.0"
     lodash "4.17.21"
 
-strapi-provider-translate-deepl@1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/strapi-provider-translate-deepl/-/strapi-provider-translate-deepl-1.1.13.tgz#44c0d0f5dc96c05eaba714840d3aa0cb664cf958"
-  integrity sha512-jiM9c3O2VEHtt//gpLA8UzrPHk94qXxvEB/4HGWWko3VI+0G3LMYC2Oi9QYBIY1aBfV6iRj/VwCXrPhoVLL07g==
+strapi-provider-translate-deepl@1.1.14:
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/strapi-provider-translate-deepl/-/strapi-provider-translate-deepl-1.1.14.tgz#ad4341a476ba9a7b7320b4404e6430c9c7c7142a"
+  integrity sha512-AyMgse2Xf9UZ3OP0ZFw1op/bOx9dlxu/CAsip7NJmjaUV4Kz3oQU4GbOy5K231qMZtRyK2fVqbIqwpO1O8PijQ==
   dependencies:
     bottleneck "^2.19.5"
-    deepl-node "^1.11.1"
+    deepl-node "^1.13.1"
 
 stream-chain@2.2.5, stream-chain@^2.2.5:
   version "2.2.5"
