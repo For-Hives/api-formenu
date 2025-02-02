@@ -11240,10 +11240,10 @@ strapi-provider-cloudflare-r2@0.3.0:
     aws-sdk "2.1287.0"
     lodash "4.17.21"
 
-strapi-provider-translate-deepl@1.1.15:
-  version "1.1.15"
-  resolved "https://registry.yarnpkg.com/strapi-provider-translate-deepl/-/strapi-provider-translate-deepl-1.1.15.tgz#546d2467ad02be913f878e447e1d8276348822f1"
-  integrity sha512-A3Xlxmxxl+i0KxX/4PY3MZlsMpvDm37Jy+yqb3vk2idOSX5gZnOQtC+wwJ3RBwO6nSdUbMgFlhbhIWdHIbNZBg==
+strapi-provider-translate-deepl@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/strapi-provider-translate-deepl/-/strapi-provider-translate-deepl-1.2.0.tgz#9d481fa937e8564f854dce3569a8323394875553"
+  integrity sha512-HSOsE7XfZ1Zt10WYTx/zWvpkrYRmkkWI5rh6jIyzwmqHt/IOYwMcKNfuLz7jZe+TWPQFsn+NhO4hoJL8NVQBsw==
   dependencies:
     bottleneck "^2.19.5"
     deepl-node "^1.13.1"
