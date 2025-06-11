@@ -11215,10 +11215,10 @@ strapi-plugin-populate-deep@3.0.1:
   resolved "https://registry.npmjs.org/strapi-plugin-populate-deep/-/strapi-plugin-populate-deep-3.0.1.tgz"
   integrity sha512-7t1bPPBN1AGKZlFT/6qsqmwgd7SzTA9CNzEBSzeYEjL/e0GKD2lf4wF11C2vMkfsQW2GhRAXZQRCGlLnV2XHFQ==
 
-strapi-plugin-translate@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-translate/-/strapi-plugin-translate-1.4.0.tgz#b14f803a3f6a92b2f0f3dd2e4cd6ba73e9f0a0f3"
-  integrity sha512-BbGhp5pAXkmkWq0SgFtaESCqcn5Hq2gRrLckBOvBHvBTd2KGlNj/hMkdizEGJtz8u7InmwtH4gJPcGe5gT+oLQ==
+strapi-plugin-translate@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-translate/-/strapi-plugin-translate-1.4.1.tgz#180406df2dcd851774df6c6b22ba41961cfa34cf"
+  integrity sha512-cmfH+UKeglVXrytQH+VmL3jfR9I8dP+wXW6hO1pEnMxlRn2hUk5tDjtZbJQZnmHRC38tlRzSqdRGMlpvmRpagQ==
   dependencies:
     "@strapi/helper-plugin" "^4.15.0"
     axios "^1.7.4"

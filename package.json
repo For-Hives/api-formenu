@@ -38,7 +38,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "strapi-plugin-populate-deep": "3.0.1",
-    "strapi-plugin-translate": "1.4.0",
+    "strapi-plugin-translate": "1.4.1",
     "strapi-provider-translate-deepl": "1.2.4",
     "strapi-provider-cloudflare-r2": "0.3.0",
     "react-router-dom": "5.3.4",
