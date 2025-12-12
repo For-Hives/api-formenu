@@ -28,7 +28,7 @@ module.exports = ({env}) => ({
     }
   },
   translate: {
-    enabled: true,
+    enabled: !!env("DEEPL_API_KEY"),
     config: {
       // Choose one of the available providers
       provider: 'deepl',
