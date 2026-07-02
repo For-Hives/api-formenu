@@ -29,10 +29,10 @@
     "supertest": "7.2.2"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "4.26.2",
+    "@strapi/plugin-documentation": "5.50.0",
     "@strapi/plugin-i18n": "4.25.23",
-    "@strapi/plugin-users-permissions": "4.26.2",
-    "@strapi/strapi": "4.26.2",
+    "@strapi/plugin-users-permissions": "5.50.0",
+    "@strapi/strapi": "5.50.0",
     "lodash": "4.18.1",
     "pg": "8.22.0",
     "react": "18.3.1",
