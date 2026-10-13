@@ -1,5 +1,7 @@
 "use strict";
 
+const { sanitizeOutput } = require("../../../utils/sanitize-output");
+
 module.exports = {
     async findMyCategories(ctx, next) {
         try {
@@ -13,7 +15,7 @@ module.exports = {
                 .service("api::category.custom-category")
                 .findMyCategories(user);
 
-            ctx.body = data;
+            ctx.body = await sanitizeOutput(data, "api::category.category");
         } catch (err) {
             ctx.badRequest("Error in fetching categories by company", {
                 moreDetails: err.message,
