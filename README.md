@@ -45,7 +45,7 @@ That is the list of technologies that ForMenu use.
 
 > **Serveur**
 >
-> > - [CapRover](https://caprover.com/)
+> > - [Coolify](https://coolify.io/)
 > > - VPS Linux (Debian)
 > > - [Docker](https://www.docker.com/)
 > > - [Fail2Ban](https://www.fail2ban.org/wiki/index.php/Main_Page)
