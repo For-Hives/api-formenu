@@ -12,7 +12,9 @@ FROM node:22.23.4-bookworm-slim@sha256:de170b39439eb0e5a3444ad7d60b015614a381e10
 WORKDIR /app
 RUN corepack enable && corepack prepare yarn@1.22.22 --activate
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+# --ignore-engines: @strapi/plugin-i18n is pinned at 4.25.23, which declares Node <=20 while the rest of
+# Strapi (4.26.2) declares <=22. Bump it to 4.26.2 and this flag can go.
+RUN yarn install --frozen-lockfile --ignore-engines
 COPY . .
 ARG ADMIN_JWT_SECRET
 ARG API_TOKEN_SALT
