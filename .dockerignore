@@ -1,12 +1,16 @@
-.github/
-.git/
-.gitignore
-.husky/
-.idea/
-tests/
-.editorconfig
-.env.example
-.eslintignore
-.eslintrc
+# What `docker build` must not read: dependencies and build output (rebuilt inside the image),
+# the git history, local environment files and tooling.
+node_modules
+build
+.cache
+.tmp
+.git
+.github
+.husky
+.idea
+.bruno
+tests
+.env
+.env.*
+!.env.example
 README.md
-renovate.json
