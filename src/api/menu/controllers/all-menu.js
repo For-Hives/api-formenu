@@ -1,5 +1,7 @@
 "use strict";
 
+const { sanitizeOutput } = require("../../../utils/sanitize-output");
+
 module.exports = {
   async allMenu(ctx, next) {
     try {
@@ -7,7 +9,7 @@ module.exports = {
         .service("api::menu.all-menu")
         .allMenu();
 
-      ctx.body = data;
+      ctx.body = await sanitizeOutput(data, "api::menu.menu");
     } catch (err) {
       console.log(err);
       ctx.badRequest("get all menu error", {

@@ -1,5 +1,7 @@
 "use strict";
 
+const { sanitizeOutput } = require("../../../utils/sanitize-output");
+
 module.exports = {
     async findMyDish(ctx, next) {
         try {
@@ -9,9 +11,11 @@ module.exports = {
                 return ctx.badRequest("No authenticated user found");
             }
 
-            ctx.body = await strapi
+            const data = await strapi
                 .service("api::dish.custom-dish")
                 .findMyDish(user);
+
+            ctx.body = await sanitizeOutput(data, "api::dish.dish");
         } catch (err) {
             ctx.badRequest("Error in fetching dishes by company", {
                 moreDetails: err.message,

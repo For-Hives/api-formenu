@@ -4,6 +4,8 @@
  * A set of functions called "actions" for `me`
  */
 
+const { sanitizeCurrentUser } = require('../../../utils/sanitize-output');
+
 module.exports = {
   async updateMe(ctx, next) {
     try {
@@ -12,7 +14,8 @@ module.exports = {
       const data = await strapi
         .service("api::me.me")
         .updateMe(ctx.state.user, json);
-      ctx.body = data;
+      // entityService returns the raw row: never send the password hash or the tokens back
+      ctx.body = await sanitizeCurrentUser(data, ctx.state.auth);
     } catch (err) {
       console.log(err);
       ctx.badRequest("updating Profile error", {
