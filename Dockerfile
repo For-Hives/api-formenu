@@ -1,0 +1,48 @@
+# The image of the API: Strapi v4, built by Coolify.
+#
+# - Node 22.23.4, the last line Strapi 4.26 supports (its plugins refuse Node 24). It carries the
+#   fix of CVE-2026-111497 (Brotli decoder); Node 20 is end of life and has none. The base image is
+#   pinned by version AND digest: Renovate proposes the next one.
+# - The arguments below are build-stage only. They are never copied to the final image, whose
+#   variables are given by Coolify when the container starts. `strapi build` only compiles the
+#   admin panel; it does not connect to the database.
+# - yarn.lock (classic) is the lockfile in use.
+
+FROM node:22.23.4-bookworm-slim@sha256:de170b39439eb0e5a3444ad7d60b015614a381e10fecae2e30ec9e735122f38d AS build
+WORKDIR /app
+RUN corepack enable && corepack prepare yarn@1.22.22 --activate
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
+COPY . .
+ARG ADMIN_JWT_SECRET
+ARG API_TOKEN_SALT
+ARG APP_KEYS
+ARG JWT_SECRET
+ARG CF_ACCESS_KEY_ID
+ARG CF_ACCESS_SECRET
+ARG CF_BUCKET
+ARG CF_ENDPOINT
+ARG CF_PUBLIC_ACCESS_URL
+ARG DATABASE_HOST
+ARG DATABASE_PORT
+ARG DATABASE_NAME
+ARG DATABASE_USERNAME
+ARG DATABASE_PASSWORD
+ARG DB_CLIENT
+ARG DEEPL_API_KEY
+ARG DEEPL_API_URL
+ARG URL
+ARG ADMIN_URL
+ENV NODE_ENV=production
+RUN yarn build
+
+# The app is copied whole: `strapi start` needs node_modules, the compiled admin (build/), the
+# sources, the config and the database folder.
+FROM node:22.23.4-bookworm-slim@sha256:de170b39439eb0e5a3444ad7d60b015614a381e10fecae2e30ec9e735122f38d AS run
+WORKDIR /app
+ENV NODE_ENV=production PORT=1337
+COPY --from=build --chown=node:node /app ./
+# Never root: `node` is the unprivileged user of the base image.
+USER node
+EXPOSE 1337
+CMD ["node_modules/.bin/strapi", "start"]
