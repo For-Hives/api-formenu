@@ -8,7 +8,7 @@
 #   admin panel; it does not connect to the database.
 # - yarn.lock (classic) is the lockfile in use.
 
-FROM node:22.23.4-bookworm-slim@sha256:de170b39439eb0e5a3444ad7d60b015614a381e10fecae2e30ec9e735122f38d AS build
+FROM node:26.13.0-bookworm-slim@sha256:bc0a2afd3b74ce12222fc8bab99271e66257f021078f5f4a5d687a77d280c1d9 AS build
 WORKDIR /app
 RUN corepack enable && corepack prepare yarn@1.22.22 --activate
 COPY package.json yarn.lock ./
@@ -40,7 +40,7 @@ RUN yarn build
 
 # The app is copied whole: `strapi start` needs node_modules, the compiled admin (build/), the
 # sources, the config and the database folder.
-FROM node:22.23.4-bookworm-slim@sha256:de170b39439eb0e5a3444ad7d60b015614a381e10fecae2e30ec9e735122f38d AS run
+FROM node:26.13.0-bookworm-slim@sha256:bc0a2afd3b74ce12222fc8bab99271e66257f021078f5f4a5d687a77d280c1d9 AS run
 WORKDIR /app
 ENV NODE_ENV=production PORT=1337
 COPY --from=build --chown=node:node /app ./
