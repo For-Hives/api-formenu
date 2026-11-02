@@ -9,7 +9,10 @@
  * - `create` always writes the caller's company, whatever the body says,
  * - `update` never changes the company of a row,
  * - a relation (dish -> category, category -> menu, dish -> ingredients...)
- *   can only point at rows of the caller's company.
+ *   can only point at rows of the caller's company,
+ * - a media field (dish image, menu background, the `content` of the
+ *   company...) can only name a file of the caller's company
+ *   (see utils/file-ownership), and files cannot be sent with the entry.
  *
  * `findOne`, `update` and `delete` keep their `company-tenancy` middleware,
  * which checks that the requested row belongs to the caller's company.
@@ -24,24 +27,18 @@
  */
 
 const { errors, parseMultipartData } = require("@strapi/utils");
+const {
+  USER_UID,
+  COMPANY_UID,
+  COMPANY_CONTENT_UIDS,
+  isPlainObject,
+  relationIds,
+} = require("./company-content");
+const { assertMediaInCompany } = require("./file-ownership");
 
 const { ForbiddenError, UnauthorizedError, ValidationError } = errors;
 
-const USER_UID = "plugin::users-permissions.user";
-const COMPANY_UID = "api::company.company";
-
-// the content types that carry a `company` relation
-const COMPANY_CONTENT_UIDS = [
-  "api::menu.menu",
-  "api::category.category",
-  "api::dish.dish",
-  "api::ingredient.ingredient",
-];
-
 const isApiToken = (ctx) => ctx.state?.auth?.strategy?.name === "api-token";
-
-const isPlainObject = (value) =>
-  value !== null && typeof value === "object" && !Array.isArray(value);
 
 /**
  * The id of the company of the connected user.
@@ -79,28 +76,6 @@ const scopeFilters = (uid, filters, companyId) => {
   const hasFilters = isPlainObject(filters) && Object.keys(filters).length > 0;
 
   return hasFilters ? { $and: [filters, scope] } : scope;
-};
-
-/**
- * Every id a relation input points at, whatever the shape Strapi accepts:
- * `3`, `"3"`, `[3, 4]`, `{ id: 3 }`, `[{ id: 3 }]`,
- * `{ connect: [...], set: [...] }`. A `disconnect` only removes links,
- * so it is not checked.
- */
-const relationIds = (value) => {
-  if (value === null || value === undefined) {
-    return [];
-  }
-  if (Array.isArray(value)) {
-    return value.flatMap(relationIds);
-  }
-  if (typeof value === "object") {
-    if ("id" in value) {
-      return [value.id];
-    }
-    return [...relationIds(value.connect), ...relationIds(value.set)];
-  }
-  return [value];
 };
 
 /**
@@ -143,7 +118,15 @@ const assertRelationsInCompany = async (uid, data, companyId) => {
 
 const parseBody = (ctx) => {
   if (ctx.is("multipart")) {
-    return parseMultipartData(ctx);
+    const body = parseMultipartData(ctx);
+    // files sent with the entry would be created without an owner, out of
+    // reach of the checks of POST /api/upload (see utils/file-ownership)
+    if (isPlainObject(body.files) && Object.keys(body.files).length > 0) {
+      throw new ForbiddenError(
+        "Upload files with POST /api/upload, then link them to the entry"
+      );
+    }
+    return { data: body.data };
   }
   const { data } = ctx.request.body || {};
   return { data };
@@ -219,13 +202,13 @@ const companyScopedController = (
         ctx
       );
       await assertRelationsInCompany(uid, data, companyId);
+      await assertMediaInCompany(uid, data, companyId);
       // the company of a new row is the caller's, never the body's
       data.company = companyId;
 
       const entity = await strapi.service(uid).create({
         ...sanitizedQuery,
         data,
-        files: "files" in body ? body.files : undefined,
       });
       const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
 
@@ -255,11 +238,11 @@ const companyScopedController = (
         ctx
       );
       await assertRelationsInCompany(uid, data, companyId);
+      await assertMediaInCompany(uid, data, companyId, { entryId: id });
 
       const entity = await strapi.service(uid).update(id, {
         ...sanitizedQuery,
         data,
-        files: "files" in body ? body.files : undefined,
       });
       const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
 

@@ -12,26 +12,28 @@
  * - `?id=<file>` with a file replaces the content of that file;
  * - `?id=<file>` without a file rewrites its name and alternative text.
  *
- * This middleware lets a user:
- * - upload without `ref` / `refId` (what the admin does), unchanged;
+ * These middlewares let a user:
+ * - upload only when their account has a company; every new file is recorded
+ *   as owned by that company (utils/file-ownership), the plain upload of the
+ *   admin included;
  * - attach a new file only to an entry of their company (menu, category,
  *   dish, ingredient, or their company itself);
- * - replace, edit, read or delete one file only when every entry it is linked
- *   to belongs to their company. A file linked to nothing has no known owner:
- *   it is refused. A file shared with an entry of another company is refused
- *   too, otherwise linking someone else's file to one's own dish would open it.
+ * - replace, edit, read or delete one file only when their company owns it.
+ *   Linking a file to one's own dish does not make it one's own: the owner is
+ *   the company that uploaded it;
+ * - never list the files (`GET /api/upload/files`): the admin does not need
+ *   it, and the list mixes every company.
  *
  * API tokens are not users and have no company: their requests pass unchanged,
  * under the permissions of the token.
  */
 
 const { errors } = require("@strapi/utils");
-const { COMPANY_CONTENT_UIDS, callerCompanyId } = require("./company-scope");
+const { COMPANY_UID, COMPANY_CONTENT_UIDS } = require("./company-content");
+const { callerCompanyId } = require("./company-scope");
+const { fileOwnedBy, setFileOwner } = require("./file-ownership");
 
 const { ForbiddenError, ValidationError } = errors;
-
-const FILE_UID = "plugin::upload.file";
-const COMPANY_UID = "api::company.company";
 
 const isApiToken = (ctx) => ctx.state?.auth?.strategy?.name === "api-token";
 
@@ -62,37 +64,15 @@ const entryInCompany = async (uid, id, companyId) => {
   return !!owned;
 };
 
-/**
- * Whether the file `fileId` is linked to entries of `companyId` only.
- * A file that does not exist is left to the upload controller (404).
- */
-const fileInCompany = async (fileId, companyId) => {
-  const file = await strapi.db.query(FILE_UID).findOne({
-    select: ["id"],
-    where: { id: fileId },
-    populate: { related: true },
-  });
-
-  if (!file) {
-    return true;
-  }
-
-  const related = file.related || [];
-  if (related.length === 0) {
-    return false;
-  }
-
-  for (const entry of related) {
-    if (!(await entryInCompany(entry.__type, entry.id, companyId))) {
-      return false;
-    }
-  }
-  return true;
-};
-
 const refuse = () => {
   throw new ForbiddenError("This file belongs to another company");
 };
+
+/** The ids of the files in the body of an upload response. */
+const responseFileIds = (body) =>
+  (Array.isArray(body) ? body : [body])
+    .filter((file) => file && file.id !== undefined)
+    .map((file) => file.id);
 
 /** Middleware of `POST /api/upload`. */
 const uploadTenancy = async (ctx, next) => {
@@ -100,21 +80,19 @@ const uploadTenancy = async (ctx, next) => {
     return next();
   }
 
+  // an account without a company has nowhere to put a file
+  const companyId = await callerCompanyId(ctx);
+
   const body = ctx.request.body || {};
   const { id } = ctx.query || {};
   const { ref, refId } = body;
 
-  if (!isPresent(id) && !isPresent(ref) && !isPresent(refId)) {
-    // a plain upload, as admin-formenu sends it
-    return next();
-  }
-
-  const companyId = await callerCompanyId(ctx);
-
   if (isPresent(id)) {
-    if (!(await fileInCompany(toId(id, "id"), companyId))) {
+    if (!(await fileOwnedBy(toId(id, "id"), companyId))) {
       refuse();
     }
+    // replacing or editing a file keeps its owner
+    return next();
   }
 
   if (isPresent(ref) || isPresent(refId)) {
@@ -126,7 +104,11 @@ const uploadTenancy = async (ctx, next) => {
     }
   }
 
-  return next();
+  await next();
+
+  if (ctx.status >= 200 && ctx.status < 300) {
+    await setFileOwner(responseFileIds(ctx.body), companyId);
+  }
 };
 
 /** Middleware of `GET` and `DELETE /api/upload/files/:id`. */
@@ -137,16 +119,24 @@ const uploadFileTenancy = async (ctx, next) => {
 
   const companyId = await callerCompanyId(ctx);
 
-  if (!(await fileInCompany(toId(ctx.params.id, "id"), companyId))) {
+  if (!(await fileOwnedBy(toId(ctx.params.id, "id"), companyId))) {
     refuse();
   }
 
   return next();
 };
 
+/** Middleware of `GET /api/upload/files`: the list is for API tokens only. */
+const uploadListTenancy = async (ctx, next) => {
+  if (isApiToken(ctx)) {
+    return next();
+  }
+  throw new ForbiddenError("The list of files is not available to users");
+};
+
 module.exports = {
   entryInCompany,
-  fileInCompany,
   uploadTenancy,
   uploadFileTenancy,
+  uploadListTenancy,
 };

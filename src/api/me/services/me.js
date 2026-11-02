@@ -1,6 +1,9 @@
 "use strict";
 
 const { errors } = require("@strapi/utils");
+const { assertMediaInCompany } = require("../../../utils/file-ownership");
+
+const USER_UID = "plugin::users-permissions.user";
 
 const normalizeEmail = (email) =>
     typeof email === "string" ? email.trim().toLowerCase() : email;
@@ -23,6 +26,23 @@ module.exports = {
             );
         }
 
+        // The profile picture is a file of the user's company, or the one the
+        // user already has: never the file of another restaurant (see
+        // utils/file-ownership). A user without a company can only keep or
+        // remove theirs.
+        if (json.profilePicture !== undefined && json.profilePicture !== null) {
+            const account = await strapi.entityService.findOne(USER_UID, user.id, {
+                populate: { company: true },
+            });
+            const companyId = account && account.company ? account.company.id : null;
+            await assertMediaInCompany(
+                USER_UID,
+                { profilePicture: json.profilePicture },
+                companyId,
+                { entryId: user.id }
+            );
+        }
+
         // Prepare update data
         const updateData = {
             username: json.username,
@@ -33,7 +53,7 @@ module.exports = {
         };
 
         return strapi.entityService.update(
-            "plugin::users-permissions.user",
+            USER_UID,
             user.id,
             {
                 data: updateData,
