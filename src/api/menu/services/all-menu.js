@@ -1,4 +1,6 @@
 "use strict";
+const {stripSensitiveData} = require("../../../utils/sanitize-output");
+const {INGREDIENT_FIELDS, SIDE_DISH_FIELDS} = require("../../../utils/public-fields");
 
 module.exports = {
   allMenu: async () => {
@@ -12,10 +14,9 @@ module.exports = {
           'activated',
           'locale'
         ],
+        // Explicit selections only, never `populate: '*'` (see all-company.js)
         populate: {
-          image: {
-            populate: '*'
-          },
+          image: true,
           company: {
             fields: [
               'id',
@@ -25,18 +26,7 @@ module.exports = {
               'city',
               'street',
               'postcode'
-            ],
-            populate: {
-              logo: {
-                populate: '*'
-              },
-              background: {
-                populate: '*'
-              },
-              // menus:{
-              //   populate: '*'
-              // }
-            }
+            ]
           },
           categories: {
             fields: [
@@ -48,9 +38,7 @@ module.exports = {
             ],
             sort: {order: 'ASC'},
             populate: {
-              icon: {
-                populate: '*'
-              },
+              icon: true,
               category: {
                 fields: [
                   'id',
@@ -60,9 +48,7 @@ module.exports = {
                   'order'
                 ],
                 populate: {
-                  icon: {
-                    populate: '*'
-                  }
+                  icon: true
                 }
               },
               categories: {
@@ -74,23 +60,24 @@ module.exports = {
                   'order'
                 ],
                 populate: {
-                  icon: {
-                    populate: '*'
-                  }
+                  icon: true
                 },
                 sort: {order: 'ASC'},
               },
               dishes: {
                 populate: {
                   ingredients: {
-                    populate: '*'
+                    fields: INGREDIENT_FIELDS
                   },
                   dishes: {
-                    populate: '*'
+                    fields: SIDE_DISH_FIELDS,
+                    populate: {
+                      ingredients: {
+                        fields: INGREDIENT_FIELDS
+                      }
+                    }
                   },
-                  image: {
-                    populate: '*'
-                  },
+                  image: true,
                   type_dish: {
                     fields: [
                       'id',
@@ -98,9 +85,7 @@ module.exports = {
                       'color',
                     ],
                     populate: {
-                      icon: {
-                        populate: '*'
-                      }
+                      icon: true
                     }
                   }
                 }
@@ -111,23 +96,6 @@ module.exports = {
       }
     );
 
-    /**
-     * Remove props recursively
-     * @param obj
-     */
-    const removePropsRecursively = (obj) => {
-      if (obj && typeof obj === 'object') {
-        delete obj.createdBy;
-        delete obj.updatedBy;
-
-        for (let key in obj) {
-          if (obj.hasOwnProperty(key)) {
-            removePropsRecursively(obj[key]);
-          }
-        }
-      }
-    }
-    data.forEach(record => removePropsRecursively(record));
-    return data;
+    return stripSensitiveData(data);
   },
 };

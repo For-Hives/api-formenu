@@ -1,5 +1,7 @@
 "use strict";
 
+const { sanitizeOutput } = require("../../../utils/sanitize-output");
+
 module.exports = {
   async allCompany(ctx, next) {
     try {
@@ -7,7 +9,7 @@ module.exports = {
         .service("api::company.all-company")
         .allCompany();
 
-      ctx.body = data;
+      ctx.body = await sanitizeOutput(data, "api::company.company");
     } catch (err) {
       console.log(err);
       ctx.badRequest("get all company error", {

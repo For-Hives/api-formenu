@@ -1,5 +1,7 @@
 "use strict";
 
+const { sanitizeOutput } = require("../../../utils/sanitize-output");
+
 module.exports = {
     async findMyIngredients(ctx, next) {
         try {
@@ -13,7 +15,7 @@ module.exports = {
                 .service("api::ingredient.custom-ingredient")
                 .findMyIngredients(user);
 
-            ctx.body = data;
+            ctx.body = await sanitizeOutput(data, "api::ingredient.ingredient");
         } catch (err) {
             ctx.badRequest("Error in fetching ingredients by company", {
                 moreDetails: err.message,

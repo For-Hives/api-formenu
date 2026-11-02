@@ -1,5 +1,6 @@
 "use strict";
-const {removePropsRecursively} = require("../../../utils/remove-props-recursively");
+const {stripSensitiveData} = require("../../../utils/sanitize-output");
+const {INGREDIENT_FIELDS, SIDE_DISH_FIELDS} = require("../../../utils/public-fields");
 
 module.exports = {
   allCompany: async () => {
@@ -31,12 +32,14 @@ module.exports = {
           'suscribe_date_start',
           'suscribe_date_end',
         ],
+        // Explicit selections only. Never `populate: '*'` here: it loads every
+        // relation of the target (the users of a company, the `related` rows
+        // of a media...). And no `company` below the root: the root already
+        // is the company.
         populate: {
           menus: {
             populate: {
-              image: {
-                populate: '*'
-              },
+              image: true,
               categories: {
                 fields: [
                   'id',
@@ -47,9 +50,7 @@ module.exports = {
                 ],
                 sort: {order: 'ASC'},
                 populate: {
-                  icon: {
-                    populate: '*'
-                  },
+                  icon: true,
                   category: {
                     fields: [
                       'id',
@@ -59,12 +60,7 @@ module.exports = {
                       'order'
                     ],
                     populate: {
-                      icon: {
-                        populate: '*'
-                      }
-                    },
-                    company: {
-                      populate: '*'
+                      icon: true
                     },
                   },
                   categories: {
@@ -76,12 +72,7 @@ module.exports = {
                       'order'
                     ],
                     populate: {
-                      icon: {
-                        populate: '*'
-                      },
-                      company: {
-                        populate: '*'
-                      },
+                      icon: true
                     },
                     sort: {order: 'ASC'},
                   },
@@ -93,14 +84,17 @@ module.exports = {
                     },
                     populate: {
                       ingredients: {
-                        populate: '*'
+                        fields: INGREDIENT_FIELDS
                       },
                       dishes: {
-                        populate: '*'
+                        fields: SIDE_DISH_FIELDS,
+                        populate: {
+                          ingredients: {
+                            fields: INGREDIENT_FIELDS
+                          }
+                        }
                       },
-                      image: {
-                        populate: '*'
-                      },
+                      image: true,
                       type_dish: {
                         fields: [
                           'id',
@@ -108,9 +102,7 @@ module.exports = {
                           'color',
                         ],
                         populate: {
-                          icon: {
-                            populate: '*'
-                          }
+                          icon: true
                         }
                       },
                     }
@@ -120,13 +112,15 @@ module.exports = {
             },
           },
           content: {
-            populate: '*'
+            populate: {
+              home_image: true,
+              home_background_images: true
+            }
           }
         }
       }
     );
 
-    data.forEach(record => removePropsRecursively(record));
-    return data;
+    return stripSensitiveData(data);
   },
 };

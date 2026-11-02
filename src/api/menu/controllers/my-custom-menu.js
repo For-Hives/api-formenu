@@ -1,5 +1,7 @@
 "use strict";
 
+const { sanitizeOutput } = require("../../../utils/sanitize-output");
+
 module.exports = {
     async findMyMenus(ctx, next) {
         try {
@@ -13,7 +15,7 @@ module.exports = {
                 .service("api::menu.my-custom-menu")
                 .findMyMenus(user);
 
-            ctx.body = data;
+            ctx.body = await sanitizeOutput(data, "api::menu.menu");
         } catch (err) {
             ctx.badRequest("Error in fetching menus by company", {
                 moreDetails: err.message,
