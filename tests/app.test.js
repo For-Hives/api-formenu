@@ -18,5 +18,6 @@ require("./controllers/company-scope");
 require("./controllers/company-scope/pivot");
 require("./controllers/upload");
 require("./controllers/upload/ownership");
+require("./controllers/upload/related");
 // todo fix this test
 

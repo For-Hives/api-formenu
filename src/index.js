@@ -1,6 +1,7 @@
 'use strict';
 
 const { backfillFileOwners } = require('./utils/file-ownership');
+const { fileRelatedSanitizer } = require('./utils/sanitize-output');
 
 module.exports = {
   /**
@@ -9,7 +10,11 @@ module.exports = {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/*{ strapi }*/) {},
+  register({ strapi }) {
+    // no `related` of a file in any response of the content API
+    // (see utils/sanitize-output)
+    strapi.sanitizers.add('content-api.output', fileRelatedSanitizer);
+  },
 
   /**
    * Runs after the database schema is synchronised, so the `ownerCompany`

@@ -157,6 +157,33 @@ const sanitizeOutput = async (data, uid, { auth } = {}) => {
   return traverse(removeUserRelations, schema, sanitized);
 };
 
+const FILE_UID = "plugin::upload.file";
+
+// Drops `related` from every file found in the data, at any depth.
+const removeFileRelated = ({ key, schema }, { remove }) => {
+  if (key === "related" && schema && schema.uid === FILE_UID) {
+    remove(key);
+  }
+};
+
+/**
+ * Global `content-api.output` sanitizer, registered in `src/index.js`: Strapi
+ * runs it at the end of `sanitize.contentAPI.output`, so on every response of
+ * the content API (core controllers of menus, dishes, companies..., the
+ * upload routes, `/api/users/me`, and the custom controllers through
+ * `sanitizeOutput`). The admin panel uses its own sanitizers and keeps it.
+ *
+ * `related`, the polymorphic relation of a file, lists the raw rows of every
+ * entry using the file. Before files had an owner, any company could link
+ * any file to its entries: a file shared by the dish of S and the dish of T
+ * is still possible in production, and `populate[image][populate][related]`
+ * (or `populate[image][populate]=*`, `populate=image.related`) from the dish
+ * of S would list the dish of T. No client reads it (admin-formenu never
+ * does), so it never leaves the content API.
+ */
+const fileRelatedSanitizer = (schema) => (data) =>
+  traverse(removeFileRelated, schema, data);
+
 /**
  * The only user record a custom endpoint may return is the caller's own one:
  * no password, no token, and none of the other users reachable through its
@@ -169,6 +196,7 @@ const sanitizeCurrentUser = (user, auth) =>
   sanitizeOutput(user, USER_UID, { auth });
 
 module.exports = {
+  fileRelatedSanitizer,
   sanitizeOutput,
   sanitizeCurrentUser,
   stripSensitiveData,
