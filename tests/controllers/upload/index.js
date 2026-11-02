@@ -116,7 +116,14 @@ describe("company isolation of the upload routes", () => {
       const put = await http()
         .put(`/api/dishes/${dishC.id}`)
         .set("Authorization", bearer(jwtC))
-        .send({ data: { image: up.body[0].id, company: C.id } });
+        // admin-formenu sends the whole file object of the upload response
+        // and the whole company object of the user
+        .send({
+          data: {
+            image: up.body[0],
+            company: { id: C.id, name: C.name, slug: C.slug },
+          },
+        });
       expect(put.status).toBe(200);
       expect((await dishImage(dishC.id)).id).toBe(up.body[0].id);
     });
