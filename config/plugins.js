@@ -1,4 +1,17 @@
 module.exports = ({env}) => ({
+  "users-permissions": {
+    config: {
+      register: {
+        // Only these fields (plus username, email and password) are read from
+        // the body of POST /api/auth/local/register. Without this list Strapi
+        // accepts every writable user field, `company` included: anyone could
+        // sign up into the restaurant of their choice and edit its menu.
+        // The company of an account is set by an operator, in the Strapi
+        // admin panel.
+        allowedFields: ["firstname", "lastname", "phoneNumber"],
+      },
+    },
+  },
   upload: {
     config: {
       provider: "strapi-provider-cloudflare-r2",

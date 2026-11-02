@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * menu controller
+ * menu controller: rows of the caller's company only (see utils/company-scope)
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+const { companyScopedController } = require('../../../utils/company-scope');
 
-module.exports = createCoreController('api::menu.menu');
+module.exports = companyScopedController('api::menu.menu');

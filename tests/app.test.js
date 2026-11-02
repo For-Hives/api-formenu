@@ -14,5 +14,6 @@ it("strapi is defined", () => {
 });
 
 require("./controllers/user");
+require("./controllers/company-scope");
 // todo fix this test
 
