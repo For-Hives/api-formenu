@@ -2,6 +2,7 @@
 
 const { errors } = require("@strapi/utils");
 const { assertMediaInCompany } = require("../../../utils/file-ownership");
+const { assertNoPivot } = require("../../../utils/company-content");
 
 const USER_UID = "plugin::users-permissions.user";
 
@@ -13,6 +14,10 @@ module.exports = {
         if (!user) {
             throw new Error("User not found");
         }
+
+        // `__pivot` would redirect the join row of the profile picture to
+        // another user or another file (see utils/company-content)
+        assertNoPivot(json);
 
         // The email is the login of the account: changing it here, without
         // proving the new address, would let a stolen session take the

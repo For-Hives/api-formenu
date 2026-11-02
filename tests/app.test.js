@@ -15,6 +15,7 @@ it("strapi is defined", () => {
 
 require("./controllers/user");
 require("./controllers/company-scope");
+require("./controllers/company-scope/pivot");
 require("./controllers/upload");
 require("./controllers/upload/ownership");
 // todo fix this test

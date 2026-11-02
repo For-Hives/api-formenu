@@ -32,6 +32,7 @@ const {
   COMPANY_UID,
   COMPANY_CONTENT_UIDS,
   isPlainObject,
+  assertNoPivot,
   relationIds,
 } = require("./company-content");
 const { assertMediaInCompany } = require("./file-ownership");
@@ -196,6 +197,9 @@ const companyScopedController = (
       if (!isPlainObject(body.data)) {
         throw new ValidationError('Missing "data" payload in the request body');
       }
+      // before the sanitizer, so that no field it keeps or drops matters
+      // (see utils/company-content)
+      assertNoPivot(body.data);
 
       const data = await this.sanitizeInput(
         without(body.data, readOnlyFields),
@@ -232,6 +236,9 @@ const companyScopedController = (
       if (!isPlainObject(body.data)) {
         throw new ValidationError('Missing "data" payload in the request body');
       }
+      // before the sanitizer, so that no field it keeps or drops matters
+      // (see utils/company-content)
+      assertNoPivot(body.data);
 
       const data = await this.sanitizeInput(
         without(body.data, readOnlyFields),
