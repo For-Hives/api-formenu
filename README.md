@@ -82,3 +82,7 @@ That is the list of technologies that ForMenu use.
 > > - [Adobe Firefly](https://www.adobe.com/sensei/generative-ai/firefly.html)
 > > - [Figma](https://www.figma.com/)
 > > - [MidJourney](https://midjourney.com/)
+
+## License
+
+MIT, see [LICENSE](LICENSE). Any component derived from Tailwind UI stays under the Tailwind UI license, not MIT.
