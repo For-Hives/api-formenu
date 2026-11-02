@@ -212,13 +212,15 @@ describe("custom controllers", () => {
               .map((file) => `${entry.name}/controllers/${file}`)
           : [];
       })
-      // the core controllers are sanitized by Strapi itself
-      .filter(
-        (file) =>
-          !fs
-            .readFileSync(path.join(API_DIR, file), "utf8")
-            .includes("createCoreController")
-      );
+      // the core controllers are sanitized by Strapi itself, those built by
+      // utils/company-scope too (they keep Strapi's sanitizeOutput)
+      .filter((file) => {
+        const source = fs.readFileSync(path.join(API_DIR, file), "utf8");
+        return !(
+          source.includes("createCoreController") ||
+          source.includes("companyScopedController")
+        );
+      });
 
     expect(customControllers.sort()).toEqual(
       CUSTOM_CONTROLLERS.map(({ file }) => file).sort()

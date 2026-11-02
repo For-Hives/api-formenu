@@ -15,8 +15,14 @@ module.exports = {
         const categories = await strapi.entityService.findMany(
             "api::category.category",
             {
-                where: {
-                    company: companyId,
+                // `filters`, not `where`: entityService silently ignores `where`
+                // and would return the rows of every company
+                filters: {
+                    company: {
+                        id: {
+                            $eq: companyId,
+                        },
+                    },
                 },
                 populate: {
                     category: true, categories: true, icon: true, dishes: true, menu: true

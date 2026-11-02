@@ -15,8 +15,14 @@ module.exports = {
         const dish = await strapi.entityService.findMany(
             "api::dish.dish",
             {
-                where: {
-                    company: companyId,
+                // `filters`, not `where`: entityService silently ignores `where`
+                // and would return the rows of every company
+                filters: {
+                    company: {
+                        id: {
+                            $eq: companyId,
+                        },
+                    },
                 },
                 populate: {
                     category: true, ingredients: true, image: true, type_dish: {fields: ['id', 'name', 'color'], populate: {icon: true}}
