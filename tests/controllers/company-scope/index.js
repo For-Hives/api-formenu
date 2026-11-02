@@ -53,10 +53,12 @@ describe("company isolation of the content API", () => {
       .query("plugin::users-permissions.role")
       .findOne({ where: { type: "authenticated" } });
 
-    // what the authenticated role of the production database grants
+    // the rights admin-formenu needs, plus company and type-dish writes so
+    // that the refusals below come from this code, not from the role
     const actions = [
       "api::company.company.find",
       "api::company.company.findOne",
+      "api::company.company.create",
       "api::company.company.update",
       "api::type-dish.type-dish.find",
       "api::type-dish.type-dish.create",
