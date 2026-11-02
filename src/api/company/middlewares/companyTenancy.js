@@ -13,6 +13,12 @@ module.exports = (config, {strapi}) => {
     const entryId = ctx.params.id ? ctx.params.id : undefined;
     let entry = {};
 
+    // API tokens (and anonymous calls) carry no users-permissions user:
+    // refuse before reading anything instead of crashing on `user.id`
+    if (!user) {
+      return ctx.unauthorized("User not authenticated");
+    }
+
     /**
      * Gets all information about a given entry,
      * including the company associated with it,
@@ -36,6 +42,10 @@ module.exports = (config, {strapi}) => {
        * to decide whether the request can be fulfilled
        * by going forward in the Strapi backend server
        */
+
+      if (!connectedUser || !connectedUser.company) {
+        return ctx.unauthorized("User is not associated with any company");
+      }
 
       if (connectedUser.company.id !== entry.id) {
         return ctx.unauthorized("This action is unauthorized.You are not from the same company as the entry.");

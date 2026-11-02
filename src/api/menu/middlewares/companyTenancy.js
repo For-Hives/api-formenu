@@ -28,7 +28,8 @@ module.exports = (config, {strapi}) => {
         return ctx.notFound("No entry found for id " + entryId + ".");
       }
 
-      if (connectedUser.company.id !== entry.company.id) {
+      // an entry without company belongs to nobody: refuse instead of crashing
+      if (!entry.company || connectedUser.company.id !== entry.company.id) {
         return ctx.unauthorized("This action is unauthorized. You are not from the same company as the entry.");
       }
     }
